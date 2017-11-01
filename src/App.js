@@ -4,6 +4,7 @@ import './App.css';
 // File imports
 import Team from './Team';
 
+
 class App extends Component {
   render() {
     return (
@@ -11,6 +12,7 @@ class App extends Component {
         <h1>NBA Trade Analyzer</h1>
         <Team />
         <Team />
+
       </div>
     );
   }
