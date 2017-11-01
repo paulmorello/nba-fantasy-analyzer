@@ -4,10 +4,10 @@ const Navbar = () =>
 
   <header>
     <nav>
-      <div>
+      <div className="navbar-left">
         <h3>Trade Analyzer</h3>
       </div>
-      <div>
+      <div className="navbar-right">
         <ul>
           <li>Link 1</li>
           <li>Link 2</li>

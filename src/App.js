@@ -3,16 +3,15 @@ import './App.css';
 
 // File imports
 import Team from './Team';
-
+import Navbar from './Navbar'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>NBA Trade Analyzer</h1>
+        <Navbar />
         <Team />
         <Team />
-
       </div>
     );
   }
