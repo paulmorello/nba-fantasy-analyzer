@@ -5,6 +5,7 @@ import './App.css';
 import GiveTeam from './GiveTeam';
 import GetTeam from './GetTeam';
 import Navbar from './Navbar';
+import TradeSummary from './TradeSummary';
 
 class App extends Component {
   render() {
@@ -13,7 +14,7 @@ class App extends Component {
         <Navbar />
         <GiveTeam />
         <GetTeam />
-        
+        <TradeSummary />
       </div>
     );
   }

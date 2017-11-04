@@ -38,3 +38,24 @@ ul li {
   display: inline-block;
   text-align: left;
 }
+
+/* Place Holder */
+.trade-summary-container {
+  width: 100%;
+  height: 70vh;
+  background-color: grey;
+}
+
+.give-team-score-container {
+  width: 45%;
+  height: 30%;
+  display: inline-block;
+  background-color: navy;
+}
+
+.get-team-score-container {
+  width: 45%;
+  height: 30%;
+  display: inline-block;
+  background-color: darkgreen;
+}
