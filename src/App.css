@@ -46,16 +46,56 @@ ul li {
   background-color: grey;
 }
 
-.give-team-score-container {
+.give-team-container {
   width: 45%;
-  height: 30%;
+  height: 90%;
   display: inline-block;
   background-color: navy;
+  margin: 0em 1em;
+}
+
+.get-team-container {
+  width: 45%;
+  height: 90%;
+  display: inline-block;
+  background-color: navy;
+  margin: 0em 1em;
+}
+
+.give-team-display-container {
+  width: 80%;
+  height: 60%;
+  background-color: green;
+}
+
+.get-team-display-container {
+  width: 80%;
+  height: 60%;
+  background-color: green;
+}
+
+.give-team-score-container {
+  width: 80%;
+  height: 20%;
+  background-color: lightgrey;
 }
 
 .get-team-score-container {
-  width: 45%;
-  height: 30%;
-  display: inline-block;
-  background-color: darkgreen;
+  width: 80%;
+  height: 20%;
+  background-color: lightgrey;
+}
+
+.give-team-score-container div {
+  width: 40%;
+  height: 100%;
+  background-color: yellow;
+  margin: 0 auto;
+}
+
+.get-team-score-container div {
+  width: 40%;
+  height: 100%;
+  background-color: yellow;
+  margin: 0 auto;
 }
