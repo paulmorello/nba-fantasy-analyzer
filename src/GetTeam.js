@@ -1,13 +1,13 @@
 import React from 'react';
 
+// File imports
+import PlayerInput from './PlayerInput';
+
 const GetTeam = () =>
 
   <div className="team-container">
     <h2>Players you receive</h2>
-    <form>
-      <input type="text" value="" placeholder="Enter a player" />
-      <button type="submit" name="submit" value="submit">Submit</button>
-    </form>
+    <PlayerInput />
   </div>;
 
 

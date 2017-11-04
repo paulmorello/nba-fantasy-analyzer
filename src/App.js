@@ -13,6 +13,7 @@ class App extends Component {
         <Navbar />
         <GiveTeam />
         <GetTeam />
+        
       </div>
     );
   }
