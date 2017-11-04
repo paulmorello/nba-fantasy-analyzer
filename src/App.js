@@ -3,6 +3,7 @@ import './App.css';
 
 // File imports
 import GiveTeam from './GiveTeam';
+import GetTeam from './GetTeam';
 import Navbar from './Navbar';
 
 class App extends Component {
@@ -11,6 +12,7 @@ class App extends Component {
       <div className="App">
         <Navbar />
         <GiveTeam />
+        <GetTeam />
       </div>
     );
   }
