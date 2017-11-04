@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 // File imports
-import Team from './Team';
+import GiveTeam from './GiveTeam';
 import Navbar from './Navbar';
 
 class App extends Component {
@@ -10,8 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
-        <Team />
-        <Team />
+        <GiveTeam />
       </div>
     );
   }
