@@ -7,6 +7,8 @@ const GiveTeamDisplay = () =>
 
   <div className="give-team-display-container">
     <Player />
+    <Player />
+    <Player />
   </div>;
 
 

@@ -51,7 +51,7 @@ ul li {
   height: 90%;
   display: inline-block;
   background-color: navy;
-  margin: 0em 1em;
+  margin: 1em 1em;
 }
 
 .get-team-container {
@@ -59,21 +59,23 @@ ul li {
   height: 90%;
   display: inline-block;
   background-color: navy;
-  margin: 0em 1em;
+  margin: 1em 1em;
 }
 
 .give-team-display-container {
-  width: 80%;
+  width: 76%;
   height: 60%;
   background-color: green;
-  margin: 0 auto;
+  margin: 5% auto 0 auto;
+  padding: 2%;
 }
 
 .get-team-display-container {
-  width: 80%;
+  width: 76%;
   height: 60%;
   background-color: green;
-  margin: 0 auto;
+  margin: 5% auto 0 auto;
+  padding: 2%;
 }
 
 .give-team-score-container {
