@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 
 // File imports
-import GiveTeam from './GiveTeam';
-import GetTeam from './GetTeam';
-import Navbar from './Navbar';
-import TradeSummary from './TradeSummary';
+import GiveTeam from './components/GiveTeam';
+import GetTeam from './components/GetTeam';
+import Navbar from './components/Navbar';
+import TradeSummary from './components/TradeSummary';
 
 class App extends Component {
   render() {
