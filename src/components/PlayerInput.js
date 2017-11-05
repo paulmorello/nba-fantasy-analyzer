@@ -2,8 +2,8 @@ import React from 'react';
 
 const PlayerInput = () =>
   <form>
-    <input type="text" value="" placeholder="Enter a player" />
-    <button type="submit" name="submit" value="submit">Submit</button>
+    <input type="text" placeholder="Enter a player" />
+    <button>Add Player</button>
   </form>
 
 
