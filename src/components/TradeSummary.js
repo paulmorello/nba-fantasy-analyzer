@@ -7,11 +7,12 @@ import ScoreGetTeam from './ScoreGetTeam';
 import GiveTeamDisplay from './GiveTeamDisplay';
 import GetTeamDisplay from './GetTeamDisplay';
 
-const TradeSummary = () =>
+const TradeSummary = props =>
 
   <div className="trade-summary-container">
     <div className="give-team-container">
-      <GiveTeamDisplay />
+      <GiveTeamDisplay
+        players={ props.players } />
       <ScoreGiveTeam />
     </div>
     <div className="get-team-container">

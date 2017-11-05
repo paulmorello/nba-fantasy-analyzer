@@ -1,11 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Player = () =>
+const Player = props =>
 
   <div className="player-container">
-    <div className="player-name">LeBron James</div>
-    <div className="player-rating">99</div>
+    <div className="player-name">{ props.name }</div>
+    <div className="player-rating">{ props.rating }</div>
   </div>;
+
+  Player.propTypes = {
+    name: PropTypes.string.isRequired,
+    rating: PropTypes.number.isRequired
+  }
 
 
 export default Player;
