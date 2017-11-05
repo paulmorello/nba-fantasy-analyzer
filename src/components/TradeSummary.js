@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // File imports
 import ScoreGiveTeam from './ScoreGiveTeam';
@@ -19,5 +20,8 @@ const TradeSummary = () =>
     </div>
   </div>;
 
+  TradeSummary.propTypes = {
+    players: PropTypes.array.isRequired
+  }
 
 export default TradeSummary;
