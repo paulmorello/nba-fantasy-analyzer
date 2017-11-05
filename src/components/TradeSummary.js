@@ -16,7 +16,8 @@ const TradeSummary = props =>
       <ScoreGiveTeam />
     </div>
     <div className="get-team-container">
-      <GetTeamDisplay />
+      <GetTeamDisplay
+        players={ props.players } />
       <ScoreGetTeam />
     </div>
   </div>;
