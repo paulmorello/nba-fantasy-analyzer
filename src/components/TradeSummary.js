@@ -13,12 +13,14 @@ const TradeSummary = props =>
     <div className="give-team-container">
       <GiveTeamDisplay
         players={ props.players } />
-      <ScoreGiveTeam />
+      <ScoreGiveTeam
+        players={ props.players } />
     </div>
     <div className="get-team-container">
       <GetTeamDisplay
         players={ props.players } />
-      <ScoreGetTeam />
+      <ScoreGetTeam
+        players={ props.players } />
     </div>
   </div>;
 

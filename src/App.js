@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 
 // File imports
-import TeamSelection from './components/TeamSelection';
 import Navbar from './components/Navbar';
+import TeamSelection from './components/TeamSelection';
 import TradeSummary from './components/TradeSummary';
 
 class App extends Component {
@@ -13,27 +13,33 @@ class App extends Component {
       {
         name: 'LeBron James',
         rating: 99,
-        isSelected: true
+        toGive: false,
+        toGet: true
       },{
         name: 'Kristaps Porzingis',
         rating: 99,
-        isSelected: true
+        toGive: false,
+        toGet: false
       },{
         name: 'Kawhi Leonard',
         rating: 99,
-        isSelected: false
+        toGive: true,
+        toGet: false
       },{
         name: 'Kevin Durant',
         rating: 99,
-        isSelected: true
+        toGive: false,
+        toGet: false
       },{
         name: 'Steph Curry',
         rating: 99,
-        isSelected: false
+        toGive: false,
+        toGet: false
       },{
         name: 'James Harden',
         rating: 99,
-        isSelected: false
+        toGive: false,
+        toGet: false
       }
     ]
   }

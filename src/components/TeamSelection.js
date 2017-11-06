@@ -9,8 +9,8 @@ import GetTeam from './GetTeam';
 const TeamSelection = props =>
 
   <div className="team-selection-container">
-    <GetTeam />
     <GiveTeam />
+    <GetTeam />
   </div>;
 
   TeamSelection.propTypes = {

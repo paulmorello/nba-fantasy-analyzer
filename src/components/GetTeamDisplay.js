@@ -8,7 +8,7 @@ const GetTeamDisplay = props =>
 
   <div className="get-team-display-container">
   { props.players
-    .filter( player => player.isSelected )
+    .filter( player => player.toGet )
     .map( (player, index) =>
     <Player
       key={index}
