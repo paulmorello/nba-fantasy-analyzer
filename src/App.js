@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 // File imports
-import GiveTeam from './components/GiveTeam';
-import GetTeam from './components/GetTeam';
+import TeamSelection from './components/TeamSelection';
 import Navbar from './components/Navbar';
 import TradeSummary from './components/TradeSummary';
 
@@ -43,8 +42,8 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
-        <GiveTeam />
-        <GetTeam />
+        <TeamSelection
+          players={ this.state.players } />
         <TradeSummary
           players={ this.state.players } />
       </div>

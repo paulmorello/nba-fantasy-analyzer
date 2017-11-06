@@ -4,8 +4,12 @@ import PropTypes from 'prop-types';
 const Player = props =>
 
   <div className="player-container">
-    <div className="player-name">{ props.name }</div>
-    <div className="player-rating">{ props.rating }</div>
+    <div className="player-name">
+      { props.name }
+    </div>
+    <div className="player-rating">
+      { props.rating }
+    </div>
   </div>;
 
   Player.propTypes = {

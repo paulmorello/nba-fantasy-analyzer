@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+.team-selection-container {
+  width: 100%;
+  
+}
+
 .team-container {
   width: 45%;
   display: inline-block;
