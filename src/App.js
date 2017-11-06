@@ -13,22 +13,28 @@ class App extends Component {
     players: [
       {
         name: 'LeBron James',
-        rating: 99
+        rating: 99,
+        isSelected: true
       },{
         name: 'Kristaps Porzingis',
-        rating: 99
+        rating: 99,
+        isSelected: true
       },{
         name: 'Kawhi Leonard',
-        rating: 99
+        rating: 99,
+        isSelected: false
       },{
         name: 'Kevin Durant',
-        rating: 99
+        rating: 99,
+        isSelected: true
       },{
         name: 'Steph Curry',
-        rating: 99
+        rating: 99,
+        isSelected: false
       },{
         name: 'James Harden',
-        rating: 99
+        rating: 99,
+        isSelected: false
       }
     ]
   }
