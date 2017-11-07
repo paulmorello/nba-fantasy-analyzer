@@ -40,6 +40,11 @@ class App extends Component {
         rating: 99,
         toGive: false,
         toGet: false
+      },{
+        name: 'Kwame Brown',
+        rating: 11,
+        toGive: false,
+        toGet: false
       }
     ]
   }
