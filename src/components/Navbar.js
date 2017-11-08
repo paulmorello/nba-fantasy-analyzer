@@ -5,7 +5,7 @@ const Navbar = () =>
   <header>
     <nav>
       <div className="navbar-left">
-        <h3>Trade Analyzer</h3>
+        <h3>NBA Trade Analyzer</h3>
       </div>
       <div className="navbar-right">
         <ul>
