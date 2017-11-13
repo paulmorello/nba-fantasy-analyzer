@@ -45,6 +45,11 @@ class App extends Component {
         rating: 11,
         toGive: false,
         toGet: false
+      },{
+        name: 'John Wall',
+        rating: 90,
+        toGive: false,
+        toGet: false
       }
     ]
   }
