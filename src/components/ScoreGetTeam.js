@@ -5,6 +5,7 @@ const ScoreGetTeam = props =>
 
   <div className="get-team-score-container">
     <div>{ props.getPlayerScore }</div>
+    <div>{ props.getPlayerScore - 200 }</div>
   </div>;
 
   ScoreGetTeam.propTypes = {
