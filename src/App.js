@@ -48,7 +48,7 @@ class App extends Component {
       },{
         name: 'John Wall',
         rating: 90,
-        toGive: false,
+        toGive: true,
         toGet: false
       }
     ]
@@ -56,18 +56,21 @@ class App extends Component {
 
   getGivePlayerScore = () =>
     this.state.players.reduce(
-      (total, guest) => player.toGive ? total + 1 : total,
+      (total, player) => player.toGive ? total + player.rating : total,
       0
     );
 
   render() {
+    const givePlayerScore = this.getGivePlayerScore();
+
     return (
       <div className="App">
         <Navbar />
         <TeamSelection
           players={ this.state.players } />
         <TradeSummary
-          players={ this.state.players } />
+          players={ this.state.players }
+          givePlayerScore={ givePlayerScore }/>
       </div>
     );
   }

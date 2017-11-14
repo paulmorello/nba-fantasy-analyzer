@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ScoreGiveTeam = () =>
+const ScoreGiveTeam = props =>
 
   <div className="give-team-score-container">
-    <div>00.00</div>
+    <div>{ props.givePlayerScore }</div>
   </div>;
 
   ScoreGiveTeam.propTypes = {
-    players: PropTypes.array
+    players: PropTypes.array,
+    givePlayerScore: PropTypes.number
   }
 
 
