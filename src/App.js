@@ -39,7 +39,7 @@ class App extends Component {
         name: 'James Harden',
         rating: 99,
         toGive: false,
-        toGet: false
+        toGet: true
       },{
         name: 'Kwame Brown',
         rating: 11,

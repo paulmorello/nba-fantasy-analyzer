@@ -21,13 +21,15 @@ const TradeSummary = props =>
       <GetTeamDisplay
         players={ props.players } />
       <ScoreGetTeam
-        players={ props.players } />
+        players={ props.players }
+        getPlayerScore={ props.getPlayerScore } />
     </div>
   </div>;
 
   TradeSummary.propTypes = {
     players: PropTypes.array.isRequired,
-    givePlayerScore: PropTypes.number
+    givePlayerScore: PropTypes.number,
+    getPlayerScore: PropTypes.number
   }
 
 export default TradeSummary;
