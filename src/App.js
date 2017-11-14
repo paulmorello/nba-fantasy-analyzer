@@ -66,6 +66,18 @@ class App extends Component {
       0
     );
 
+  addGivePlayer = (indexToChange) =>
+    this.setState({
+      players: this.state.players.map( (player, index) => {
+        if (index === indexToChange) {
+          return {
+            toGive: true
+          }
+        }
+        return player
+      })
+    })
+
   render() {
     const givePlayerScore = this.getGivePlayerScore();
     const getPlayerScore = this.getGetPlayerScore();
@@ -74,7 +86,8 @@ class App extends Component {
       <div className="App">
         <Navbar />
         <TeamSelection
-          players={ this.state.players } />
+          players={ this.state.players }
+          addGivePlayer={ this.addGivePlayer } />
         <TradeSummary
           players={ this.state.players }
           givePlayerScore={ givePlayerScore }
