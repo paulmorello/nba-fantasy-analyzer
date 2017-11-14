@@ -60,8 +60,15 @@ class App extends Component {
       0
     );
 
+  getGetPlayerScore = () =>
+    this.state.players.reduce(
+      (total, player) => player.toGet ? total + player.rating : total,
+      0
+    );
+
   render() {
     const givePlayerScore = this.getGivePlayerScore();
+    const getPlayerScore = this.getGetPlayerScore();
 
     return (
       <div className="App">
@@ -70,7 +77,8 @@ class App extends Component {
           players={ this.state.players } />
         <TradeSummary
           players={ this.state.players }
-          givePlayerScore={ givePlayerScore }/>
+          givePlayerScore={ givePlayerScore }
+          getPlayerScore={ getPlayerScore } />
       </div>
     );
   }
