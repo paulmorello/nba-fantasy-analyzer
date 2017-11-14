@@ -54,6 +54,12 @@ class App extends Component {
     ]
   }
 
+  getGivePlayerScore = () =>
+    this.state.players.reduce(
+      (total, guest) => player.toGive ? total + 1 : total,
+      0
+    );
+
   render() {
     return (
       <div className="App">
