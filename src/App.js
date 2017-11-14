@@ -71,6 +71,7 @@ class App extends Component {
       players: this.state.players.map( (player, index) => {
         if (index === indexToChange) {
           return {
+            ...player,
             toGive: true
           }
         }
