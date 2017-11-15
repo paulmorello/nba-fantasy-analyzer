@@ -9,12 +9,14 @@ import GetTeam from './GetTeam';
 const TeamSelection = props =>
 
   <div className="team-selection-container">
-    <GiveTeam />
+    <GiveTeam
+      addGivePlayer={ props.addGivePlayer }/>
     <GetTeam />
   </div>;
 
   TeamSelection.propTypes = {
-    players: PropTypes.array.isRequired
+    players: PropTypes.array.isRequired,
+    addGivePlayer: PropTypes.func.isRequired
   }
 
 export default TeamSelection;
