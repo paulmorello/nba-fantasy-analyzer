@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const PlayerInput = props =>
+const GivePlayerInput = props =>
   <div>
     <input
       type="text"
@@ -10,11 +10,10 @@ const PlayerInput = props =>
     <button>Add Player</button>
   </div>;
 
-  PlayerInput.propTypes = {
+  GivePlayerInput.propTypes = {
     players: PropTypes.array.isRequired,
-    addGivePlayer: PropTypes.func,
-    addGetPlayer: PropTypes.func
+    addGivePlayer: PropTypes.func
   }
 
 
-export default PlayerInput;
+export default GivePlayerInput;

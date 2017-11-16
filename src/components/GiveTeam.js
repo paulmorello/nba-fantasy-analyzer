@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // File imports
-import PlayerInput from './PlayerInput';
+import GivePlayerInput from './GivePlayerInput';
 
 const GiveTeam = props =>
 
   <div className="team-container">
     <h2>Players you give up</h2>
-    <PlayerInput
+    <GivePlayerInput
       players={ props.players }
       addGivePlayer={ props.addGivePlayer } />
   </div>;
