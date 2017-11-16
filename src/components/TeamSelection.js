@@ -10,7 +10,8 @@ const TeamSelection = props =>
 
   <div className="team-selection-container">
     <GiveTeam
-      addGivePlayer={ props.addGivePlayer }/>
+      players={ props.players }
+      addGivePlayer={ props.addGivePlayer } />
     <GetTeam />
   </div>;
 

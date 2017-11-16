@@ -66,10 +66,10 @@ class App extends Component {
       0
     );
 
-  addGivePlayer = (indexToChange) =>
+  addGivePlayer = (playerName) =>
     this.setState({
       players: this.state.players.map( (player, index) => {
-        if (index === indexToChange) {
+        if (player.name === playerName) {
           return {
             ...player,
             toGive: true
