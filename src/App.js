@@ -14,7 +14,7 @@ class App extends Component {
         name: 'Lebron James',
         rating: 99,
         toGive: false,
-        toGet: true
+        toGet: false
       },{
         name: 'Kristaps Porzingis',
         rating: 99,
@@ -23,7 +23,7 @@ class App extends Component {
       },{
         name: 'Kawhi Leonard',
         rating: 99,
-        toGive: true,
+        toGive: false,
         toGet: false
       },{
         name: 'Kevin Durant',
@@ -39,7 +39,7 @@ class App extends Component {
         name: 'James Harden',
         rating: 99,
         toGive: false,
-        toGet: true
+        toGet: false
       },{
         name: 'Kwame Brown',
         rating: 11,
@@ -48,7 +48,12 @@ class App extends Component {
       },{
         name: 'John Wall',
         rating: 90,
-        toGive: true,
+        toGive: false,
+        toGet: false
+      },{
+        name: 'Chris Paul',
+        rating: 86,
+        toGive: false,
         toGet: false
       }
     ]
