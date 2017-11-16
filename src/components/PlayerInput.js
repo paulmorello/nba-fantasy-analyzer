@@ -6,14 +6,14 @@ const PlayerInput = props =>
     <input
       type="text"
       placeholder="Enter a player"
-      value={ props.children }
       onChange={ e => props.addGivePlayer(e.target.value) } />
     <button>Add Player</button>
   </div>;
 
   PlayerInput.propTypes = {
-    players: PropTypes.array,
-    addGivePlayer: PropTypes.func.isRequired
+    players: PropTypes.array.isRequired,
+    addGivePlayer: PropTypes.func,
+    addGetPlayer: PropTypes.func
   }
 
 

@@ -79,6 +79,19 @@ class App extends Component {
       })
     })
 
+  addGetPlayer = (playerName) =>
+    this.setState({
+      players: this.state.players.map( (player, index) => {
+        if (player.name === playerName) {
+          return {
+            ...player,
+            toGet: true
+          }
+        }
+        return player
+      })
+    })
+
   render() {
     const givePlayerScore = this.getGivePlayerScore();
     const getPlayerScore = this.getGetPlayerScore();
@@ -88,7 +101,8 @@ class App extends Component {
         <Navbar />
         <TeamSelection
           players={ this.state.players }
-          addGivePlayer={ this.addGivePlayer } />
+          addGivePlayer={ this.addGivePlayer }
+          addGetPlayer={ this.addGetPlayer } />
         <TradeSummary
           players={ this.state.players }
           givePlayerScore={ givePlayerScore }

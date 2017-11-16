@@ -15,7 +15,7 @@ const GiveTeam = props =>
 
   GiveTeam.propTypes = {
     players: PropTypes.array.isRequired,
-    addGivePlayer: PropTypes.func.isRequired
+    addGivePlayer: PropTypes.func
   }
 
 
