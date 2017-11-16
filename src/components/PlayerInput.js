@@ -5,10 +5,11 @@ const PlayerInput = props =>
   <div>
     <input
       type="text"
-      placeholder="Enter a player" />
-    <button
-      onClick={ () => props.addGivePlayer('Kristaps Porzingis') }>Add Player</button>
-  </div>
+      placeholder="Enter a player"
+      value={ props.children }
+      onChange={ e => props.addGivePlayer(e.target.value) } />
+    <button>Add Player</button>
+  </div>;
 
   PlayerInput.propTypes = {
     players: PropTypes.array,

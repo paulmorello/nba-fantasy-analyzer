@@ -11,7 +11,7 @@ class App extends Component {
   state = {
     players: [
       {
-        name: 'LeBron James',
+        name: 'Lebron James',
         rating: 99,
         toGive: false,
         toGet: true
