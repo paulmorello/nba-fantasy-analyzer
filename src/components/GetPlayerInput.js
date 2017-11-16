@@ -11,7 +11,7 @@ const GetPlayerInput = props =>
   </div>;
 
   GetPlayerInput.propTypes = {
-    players: PropTypes.array.isRequired,
+    players: PropTypes.array,
     addGetPlayer: PropTypes.func
   }
 
