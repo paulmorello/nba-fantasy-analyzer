@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const PlayerInput = props =>
-  <form>
+  <div>
     <input
       type="text"
       placeholder="Enter a player" />
     <button
       onClick={ () => props.addGivePlayer('Kristaps Porzingis') }>Add Player</button>
-  </form>
+  </div>
 
   PlayerInput.propTypes = {
     players: PropTypes.array,
