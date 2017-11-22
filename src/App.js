@@ -59,6 +59,14 @@ class App extends Component {
     ]
   }
 
+  getPlayerStats = () => {
+    const NBA = require('nba');
+    const player = NBA.findPlayer('Stephen Curry');
+    const playerStats = NBA.stats.playerInfo({ PlayerID: player.playerId });
+
+    console.log(player, playerStats)
+  }
+
   getGivePlayerScore = () =>
     this.state.players.reduce(
       (total, player) => player.toGive ? total + player.rating : total,
