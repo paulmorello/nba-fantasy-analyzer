@@ -14,13 +14,15 @@ const TeamSelection = props =>
       addGivePlayer={ props.addGivePlayer } />
     <GetTeam
       players={ props.players }
-      addGetPlayer={ props.addGetPlayer } />
+      addGetPlayer={ props.addGetPlayer }
+      getPlayerStats={ props.getPlayerStats } />
   </div>;
 
   TeamSelection.propTypes = {
     players: PropTypes.array.isRequired,
     addGivePlayer: PropTypes.func.isRequired,
-    addGetPlayer: PropTypes.func.isRequired
+    addGetPlayer: PropTypes.func.isRequired,
+    getPlayerStats: PropTypes.func.isRequired
   }
 
 export default TeamSelection;

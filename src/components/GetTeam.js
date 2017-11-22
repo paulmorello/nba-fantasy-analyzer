@@ -10,12 +10,14 @@ const GetTeam = props =>
     <h2>Players you receive</h2>
     <GetPlayerInput
       players={ props.players }
-      addGetPlayer={ props.addGetPlayer } />
+      addGetPlayer={ props.addGetPlayer }
+      getPlayerStats={ props.getPlayerStats } />
   </div>;
 
   GetTeam.propTypes = {
     players: PropTypes.array,
-    addGetPlayer: PropTypes.func
+    addGetPlayer: PropTypes.func,
+    getPlayerStats: PropTypes.func
   }
 
 

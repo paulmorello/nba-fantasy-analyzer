@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import NBA from 'nba';
 
 // File imports
 import Navbar from './components/Navbar';
@@ -60,11 +61,15 @@ class App extends Component {
   }
 
   getPlayerStats = () => {
-    const NBA = require('nba');
     const player = NBA.findPlayer('Stephen Curry');
-    const playerStats = NBA.stats.playerInfo({ PlayerID: player.playerId });
+    let stats = {}
+    NBA.stats.playerInfo({ PlayerID: player.playerId })
+      .then((data) => {
+        const playerStats = data;
+        stats = playerStats.commonPlayerInfo[0];
+      })
 
-    console.log(player, playerStats)
+    console.log(stats);
   }
 
   getGivePlayerScore = () =>
@@ -115,7 +120,8 @@ class App extends Component {
         <TeamSelection
           players={ this.state.players }
           addGivePlayer={ this.addGivePlayer }
-          addGetPlayer={ this.addGetPlayer } />
+          addGetPlayer={ this.addGetPlayer }
+          getPlayerStats={ this.getPlayerStats } />
         <TradeSummary
           players={ this.state.players }
           givePlayerScore={ givePlayerScore }
