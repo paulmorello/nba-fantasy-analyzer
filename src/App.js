@@ -6,6 +6,7 @@ import NBA from 'nba';
 import Navbar from './components/Navbar';
 import TeamSelection from './components/TeamSelection';
 import TradeSummary from './components/TradeSummary';
+import Player from './components/Player';
 
 class App extends Component {
 
@@ -28,11 +29,6 @@ class App extends Component {
         toGet: false
       },{
         name: 'Kevin Durant',
-        rating: 99,
-        toGive: false,
-        toGet: false
-      },{
-        name: 'Steph Curry',
         rating: 99,
         toGive: false,
         toGet: false
@@ -62,18 +58,12 @@ class App extends Component {
 
   async getPlayerStats () {
     const player = NBA.findPlayer('Stephen Curry');
-    // NBA.stats.playerInfo({ PlayerID: player.playerId })
-    //   .then((data) => {
-    //     const playerStats = data;
-    //     stats = playerStats.commonPlayerInfo[0];
-    //   })
-
     const playerStats = await NBA.stats.playerInfo({ PlayerID: player.playerId })
                               .then( data => {
                                 return data;
                               })
-
-    console.log(playerStats.playerHeadlineStats[0].playerName);
+    console.log(playerStats.playerHeadlineStats[0]);
+    return playerStats.playerHeadlineStats[0]
   }
 
   getGivePlayerScore = () =>
