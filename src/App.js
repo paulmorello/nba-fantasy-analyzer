@@ -60,16 +60,20 @@ class App extends Component {
     ]
   }
 
-  getPlayerStats = () => {
+  async getPlayerStats () {
     const player = NBA.findPlayer('Stephen Curry');
-    let stats = {}
-    NBA.stats.playerInfo({ PlayerID: player.playerId })
-      .then((data) => {
-        const playerStats = data;
-        stats = playerStats.commonPlayerInfo[0];
-      })
+    // NBA.stats.playerInfo({ PlayerID: player.playerId })
+    //   .then((data) => {
+    //     const playerStats = data;
+    //     stats = playerStats.commonPlayerInfo[0];
+    //   })
 
-    console.log(stats);
+    const playerStats = await NBA.stats.playerInfo({ PlayerID: player.playerId })
+                              .then( data => {
+                                return data;
+                              })
+
+    console.log(playerStats.playerHeadlineStats[0].playerName);
   }
 
   getGivePlayerScore = () =>
