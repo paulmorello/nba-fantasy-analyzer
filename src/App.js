@@ -11,27 +11,14 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      players: [
-        {
-          name: 'Lebron James',
-          rating: 99,
-          toGive: false,
-          toGet: false
-        },{
-          name: 'Kristaps Porzingis',
-          rating: 99,
-          toGive: false,
-          toGet: false
-        },{
-          name: 'Kawhi Leonard',
-          rating: 99,
-          toGive: false,
-          toGet: false
-        }
-      ]
+      players: []
     }
   }
 
+  async componentWillMount() {
+    this.state.players.push(await this.getPlayerStats());
+    console.log(this.state);
+  }
 
   async getPlayerStats () {
     const player = NBA.findPlayer('Stephen Curry');
@@ -39,25 +26,16 @@ class App extends Component {
                               .then( data => {
                                 return data;
                               })
-    // console.log(playerStats.playerHeadlineStats[0]);
+    console.log(playerStats);
 
     const addPlayerToState = {
       name: playerStats.playerHeadlineStats[0].playerName,
       rating: 99,
       toGive: false,
-      toGet: true
+      toGet: false
     }
 
-    console.log(addPlayerToState);
-
     return addPlayerToState
-  }
-
-  addPlayer = () => {
-    let player = this.getPlayerStats();
-
-    console.log(player);
-
   }
 
   getGivePlayerScore = () =>
@@ -108,9 +86,7 @@ class App extends Component {
         <TeamSelection
           players={ this.state.players }
           addGivePlayer={ this.addGivePlayer }
-          addGetPlayer={ this.addGetPlayer }
-          getPlayerStats={ this.getPlayerStats }
-          addPlayer={ this.addPlayer } />
+          addGetPlayer={ this.addGetPlayer } />
         <TradeSummary
           players={ this.state.players }
           givePlayerScore={ givePlayerScore }
