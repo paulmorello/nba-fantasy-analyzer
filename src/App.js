@@ -16,17 +16,16 @@ class App extends Component {
   }
 
   async componentWillMount() {
-    this.state.players.push(await this.getPlayerStats());
+    this.state.players.push(await this.getPlayerStats('Stephen Curry'));
     console.log(this.state);
   }
 
-  async getPlayerStats () {
-    const player = NBA.findPlayer('Stephen Curry');
+  async getPlayerStats (playerName) {
+    const player = NBA.findPlayer(playerName);
     const playerStats = await NBA.stats.playerInfo({ PlayerID: player.playerId })
                               .then( data => {
                                 return data;
                               })
-    console.log(playerStats);
 
     const addPlayerToState = {
       name: playerStats.playerHeadlineStats[0].playerName,
@@ -36,6 +35,20 @@ class App extends Component {
     }
 
     return addPlayerToState
+  }
+
+  addPlayer = () => {
+
+    let player = this.getPlayerStats('Lebron James');
+    let that = this;
+
+    setTimeout( () => {
+      player = player.then( data => {
+        that.state.players.push(data);
+        that.setState(that.state);
+      });
+    }, 1000);
+
   }
 
   getGivePlayerScore = () =>
@@ -86,7 +99,8 @@ class App extends Component {
         <TeamSelection
           players={ this.state.players }
           addGivePlayer={ this.addGivePlayer }
-          addGetPlayer={ this.addGetPlayer } />
+          addGetPlayer={ this.addGetPlayer }
+          addPlayerToState={ this.addPlayer } />
         <TradeSummary
           players={ this.state.players }
           givePlayerScore={ givePlayerScore }
