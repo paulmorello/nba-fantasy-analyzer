@@ -8,52 +8,30 @@ import TeamSelection from './components/TeamSelection';
 import TradeSummary from './components/TradeSummary';
 
 class App extends Component {
-
-  state = {
-    players: [
-      {
-        name: 'Lebron James',
-        rating: 99,
-        toGive: false,
-        toGet: false
-      },{
-        name: 'Kristaps Porzingis',
-        rating: 99,
-        toGive: false,
-        toGet: false
-      },{
-        name: 'Kawhi Leonard',
-        rating: 99,
-        toGive: false,
-        toGet: false
-      },{
-        name: 'Kevin Durant',
-        rating: 99,
-        toGive: false,
-        toGet: false
-      },{
-        name: 'James Harden',
-        rating: 99,
-        toGive: false,
-        toGet: false
-      },{
-        name: 'Kwame Brown',
-        rating: 11,
-        toGive: false,
-        toGet: false
-      },{
-        name: 'John Wall',
-        rating: 90,
-        toGive: false,
-        toGet: false
-      },{
-        name: 'Chris Paul',
-        rating: 86,
-        toGive: false,
-        toGet: false
-      }
-    ]
+  constructor() {
+    super();
+    this.state = {
+      players: [
+        {
+          name: 'Lebron James',
+          rating: 99,
+          toGive: false,
+          toGet: false
+        },{
+          name: 'Kristaps Porzingis',
+          rating: 99,
+          toGive: false,
+          toGet: false
+        },{
+          name: 'Kawhi Leonard',
+          rating: 99,
+          toGive: false,
+          toGet: false
+        }
+      ]
+    }
   }
+
 
   async getPlayerStats () {
     const player = NBA.findPlayer('Stephen Curry');
@@ -61,14 +39,25 @@ class App extends Component {
                               .then( data => {
                                 return data;
                               })
-    console.log(playerStats.playerHeadlineStats[0]);
+    // console.log(playerStats.playerHeadlineStats[0]);
 
-    return {
+    const addPlayerToState = {
       name: playerStats.playerHeadlineStats[0].playerName,
       rating: 99,
       toGive: false,
       toGet: true
     }
+
+    console.log(addPlayerToState);
+
+    return addPlayerToState
+  }
+
+  addPlayer = () => {
+    let player = this.getPlayerStats();
+
+    console.log(player);
+
   }
 
   getGivePlayerScore = () =>
@@ -120,7 +109,8 @@ class App extends Component {
           players={ this.state.players }
           addGivePlayer={ this.addGivePlayer }
           addGetPlayer={ this.addGetPlayer }
-          getPlayerStats={ this.getPlayerStats } />
+          getPlayerStats={ this.getPlayerStats }
+          addPlayer={ this.addPlayer } />
         <TradeSummary
           players={ this.state.players }
           givePlayerScore={ givePlayerScore }
