@@ -6,7 +6,6 @@ import NBA from 'nba';
 import Navbar from './components/Navbar';
 import TeamSelection from './components/TeamSelection';
 import TradeSummary from './components/TradeSummary';
-import Player from './components/Player';
 
 class App extends Component {
 
@@ -63,7 +62,13 @@ class App extends Component {
                                 return data;
                               })
     console.log(playerStats.playerHeadlineStats[0]);
-    return playerStats.playerHeadlineStats[0]
+
+    return {
+      name: playerStats.playerHeadlineStats[0].playerName,
+      rating: 99,
+      toGive: false,
+      toGet: true
+    }
   }
 
   getGivePlayerScore = () =>
