@@ -120,13 +120,13 @@ ul li {
 }
 
 .player-name {
-  width: 60%;
+  width: 80%;
   height: 100%;
   display: inline-block;
 }
 
 .player-rating {
-  width: 20%;
+  width: 10%;
   height: 100%;
   display: inline-block;
 }

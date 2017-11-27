@@ -13,6 +13,8 @@ const GetTeamDisplay = props =>
     <Player
       key={index}
       name={player.name}
+      points={player.points}
+      assists={player.assists}
       rating={player.rating} />
   )}
   </div>;

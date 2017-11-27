@@ -29,10 +29,13 @@ class App extends Component {
 
     const addPlayerToState = {
       name: playerStats.playerHeadlineStats[0].playerName,
+      points: playerStats.playerHeadlineStats[0].pts,
+      assists: playerStats.playerHeadlineStats[0].ast,
       rating: 99,
       toGive: false,
       toGet: false
     }
+    console.log(playerStats);
 
     return addPlayerToState
   }

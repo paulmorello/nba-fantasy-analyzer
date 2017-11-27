@@ -5,7 +5,9 @@ const Player = props =>
 
   <div className="player-container">
     <div className="player-name">
-      { props.name }
+      <span>{ props.name } </span>
+      <span>Pts: { props.points }, </span>
+      <span>Ast: { props.assists } </span>
     </div>
     <div className="player-rating">
       { props.rating }
