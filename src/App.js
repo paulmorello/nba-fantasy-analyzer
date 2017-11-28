@@ -40,9 +40,9 @@ class App extends Component {
     return addPlayerToState
   }
 
-  addPlayer = () => {
-
-    let player = this.getPlayerStats('Lebron James');
+  addPlayer = (playerName, team) => {
+    
+    let player = this.getPlayerStats(playerName);
     let that = this;
 
     setTimeout( () => {
@@ -50,6 +50,12 @@ class App extends Component {
         that.state.players.push(data);
         that.setState(that.state);
       });
+
+      if (team === 'give') {
+        that.addGivePlayer(playerName)
+      } else {
+        that.addGetPlayer(playerName)
+      }
     }, 1000);
 
   }

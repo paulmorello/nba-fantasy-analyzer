@@ -6,8 +6,8 @@ const GetPlayerInput = props =>
     <input
       type="text"
       placeholder="Enter a player"
-      onChange={ e => props.addGetPlayer(e.target.value) } />
-    <button onClick={ props.addPlayerToState }>Add Player</button>
+      onClick={ e => props.addPlayerToState(e.target.value, 'get') } />
+    <button>Add Player</button>
   </div>;
 
   GetPlayerInput.propTypes = {
