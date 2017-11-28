@@ -21,12 +21,19 @@ class App extends Component {
   }
 
   async getPlayerStats (playerName) {
-    
+
     const player = NBA.findPlayer(playerName);
     const playerStats = await NBA.stats.playerInfo({ PlayerID: player.playerId })
                               .then( data => {
                                 return data;
                               })
+    const newPlayerStats = await NBA.stats.playerProfile({ 
+                                  PlayerID: player.playerId,
+                                  Season: "2016-17"
+                                })
+                                .then( data => {
+                                  console.log(data);
+                                })
 
     const addPlayerToState = {
       name: playerStats.playerHeadlineStats[0].playerName,
