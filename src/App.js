@@ -21,6 +21,7 @@ class App extends Component {
   }
 
   async getPlayerStats (playerName) {
+    
     const player = NBA.findPlayer(playerName);
     const playerStats = await NBA.stats.playerInfo({ PlayerID: player.playerId })
                               .then( data => {
@@ -35,13 +36,12 @@ class App extends Component {
       toGive: false,
       toGet: false
     }
-    console.log(playerStats);
 
     return addPlayerToState
   }
 
-  addPlayer = (playerName, team) => {
-    
+  addPlayer = (playerName) => {
+
     let player = this.getPlayerStats(playerName);
     let that = this;
 
@@ -50,14 +50,7 @@ class App extends Component {
         that.state.players.push(data);
         that.setState(that.state);
       });
-
-      if (team === 'give') {
-        that.addGivePlayer(playerName)
-      } else {
-        that.addGetPlayer(playerName)
-      }
     }, 1000);
-
   }
 
   getGivePlayerScore = () =>
