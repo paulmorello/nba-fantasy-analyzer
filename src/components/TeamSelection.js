@@ -11,7 +11,8 @@ const TeamSelection = props =>
   <div className="team-selection-container">
     <GiveTeam
       players={ props.players }
-      addGivePlayer={ props.addGivePlayer } />
+      addGivePlayer={ props.addGivePlayer }
+      addPlayerToState={ props.addPlayerToState } />
     <GetTeam
       players={ props.players }
       addGetPlayer={ props.addGetPlayer }

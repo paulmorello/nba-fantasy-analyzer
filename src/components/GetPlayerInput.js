@@ -11,11 +11,11 @@ class GetPlayerInput extends Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
-  handleChange = (e) => {
+  handleChange(e) {
     this.setState({ playerName: e.target.value });
   }
 
-  handleClick = () => {
+  handleClick() {
     this.props.addPlayerToState(this.state.playerName)
 
     setTimeout( () => {

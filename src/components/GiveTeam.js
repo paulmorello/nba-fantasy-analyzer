@@ -10,7 +10,8 @@ const GiveTeam = props =>
     <h2>Players you give up</h2>
     <GivePlayerInput
       players={ props.players }
-      addGivePlayer={ props.addGivePlayer } />
+      addGivePlayer={ props.addGivePlayer }
+      addPlayerToState={ props.addPlayerToState } />
   </div>;
 
   GiveTeam.propTypes = {
