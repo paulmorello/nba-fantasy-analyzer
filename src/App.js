@@ -32,7 +32,6 @@ class App extends Component {
                                   Season: "2017-18"
                                 })
                                 .then( data => {
-                                  console.log(data);
                                   return data;
                                 })
 

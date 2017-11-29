@@ -21,7 +21,7 @@ class GivePlayerInput extends Component {
     setTimeout( () => {
       this.props.addGivePlayer(this.state.playerName)
       console.log(this.state);
-    }, 2000)
+    }, 3000)
   }
 
   render() {
