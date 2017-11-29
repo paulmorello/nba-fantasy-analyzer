@@ -85,6 +85,34 @@ class App extends Component {
     }, 1000);
   }
 
+  removeGetPlayer = (playerName) => {
+    this.setState({
+      players: this.state.players.map( (player, index) => {
+        if (player.name === playerName) {
+          return {
+            ...player,
+            toGet: false
+          }
+        }
+        return player
+      })
+    })
+  }
+
+  removeGivePlayer = (playerName) => {
+    this.setState({
+      players: this.state.players.map( (player, index) => {
+        if (player.name === playerName) {
+          return {
+            ...player,
+            toGive: false
+          }
+        }
+        return player
+      })
+    })
+  }
+
   getGivePlayerScore = () =>
     this.state.players.reduce(
       (total, player) => player.toGive ? total + player.rating : total,
@@ -138,7 +166,9 @@ class App extends Component {
         <TradeSummary
           players={ this.state.players }
           givePlayerScore={ givePlayerScore }
-          getPlayerScore={ getPlayerScore } />
+          getPlayerScore={ getPlayerScore }
+          removeGivePlayer={ this.removeGivePlayer }
+          removeGetPlayer={ this.removeGetPlayer } />
       </div>
     );
   }
