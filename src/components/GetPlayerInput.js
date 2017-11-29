@@ -21,7 +21,7 @@ class GetPlayerInput extends Component {
     setTimeout( () => {
       this.props.addGetPlayer(this.state.playerName)
       console.log(this.state);
-    }, 3000)
+    }, 5000)
   }
 
   render() {

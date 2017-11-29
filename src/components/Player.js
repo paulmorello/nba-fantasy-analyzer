@@ -5,14 +5,18 @@ const Player = props =>
 
   <div className="player-container">
     <div className="player-name">
-      <span>{ props.name } </span>
+      <span>{ props.name }, </span>
+      <span>{ props.team } </span>
     </div>
     <div className="player-rating">
       { props.rating }
     </div>
     <div className="player-stats">
       <span>Pts: { props.points }, </span>
-      <span>Ast: { props.assists } </span>
+      <span>Ast: { props.assists }, </span>
+      <span>Reb: { props.rebounds }, </span>
+      <span>Blk: { props.blocks }, </span>
+      <span>Stl: { props.steals } </span>
     </div>
   </div>;
 
