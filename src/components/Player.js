@@ -12,6 +12,7 @@ const Player = props =>
       { props.rating }
     </div>
     <div className="player-stats">
+      <span>FG%: { (props.fgPct * 100).toFixed(2) }%, </span>
       <span>Pts: { props.points }, </span>
       <span>Ast: { props.assists }, </span>
       <span>Reb: { props.rebounds }, </span>

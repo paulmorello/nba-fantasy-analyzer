@@ -14,6 +14,7 @@ const GiveTeamDisplay = props =>
       key={index}
       name={player.name}
       team={player.team}
+      fgPct={player.fgPct}
       points={player.points}
       assists={player.assists}
       rebounds={player.rebounds}
