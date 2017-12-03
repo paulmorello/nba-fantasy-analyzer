@@ -76,6 +76,7 @@ ul li {
   background-color: green;
   margin: 5% auto 0 auto;
   padding: 2%;
+  overflow: auto;
 }
 
 .get-team-display-container {
@@ -84,6 +85,7 @@ ul li {
   background-color: green;
   margin: 5% auto 0 auto;
   padding: 2%;
+  overflow: auto;
 }
 
 .give-team-score-container {
