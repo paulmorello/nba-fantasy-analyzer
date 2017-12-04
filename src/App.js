@@ -38,6 +38,8 @@ class App extends Component {
     const playerCurrentSeasonStats = newPlayerStats.seasonTotalsRegularSeason
                                   .filter( season => season.seasonId === "2017-18" );
 
+    const playerRating = this.getRating(playerCurrentSeasonStats);
+
     const addPlayerToState = {
       name: playerStats.playerHeadlineStats[0].playerName,
       season: playerCurrentSeasonStats[0].seasonId,
@@ -64,7 +66,7 @@ class App extends Component {
       pf: playerCurrentSeasonStats[0].pf,
       tov: playerCurrentSeasonStats[0].tov,
       age: playerCurrentSeasonStats[0].playerAge,
-      rating: 99,
+      rating: playerRating,
       toGive: false,
       toGet: false
     }
@@ -85,6 +87,22 @@ class App extends Component {
         that.setState(that.state);
       });
     }, 1000);
+  }
+
+  getRating = (player) => {
+
+    const rating =
+      ((player[0].pts * .6) +
+      (player[0].reb) +
+      (player[0].ast * 1.2) +
+      (player[0].stl * 1.5) +
+      (player[0].blk * 1.8) +
+      (player[0].fG3M * 1.5) +
+      ((player[0].fgm * player[0].fgPct) * .6) +
+      ((player[0].ftm * player[0].ftPct) * .6) -
+      (player[0].tov * 1.5))
+
+    return Math.round(rating)
   }
 
   removeGetPlayer = (playerName) => {

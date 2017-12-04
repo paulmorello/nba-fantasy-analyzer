@@ -103,15 +103,15 @@ ul li {
 }
 
 .give-team-score-container div {
-  width: 40%;
-  height: 45%;
+  width: 100%;
+  height: 50%;
   background-color: yellow;
   margin: 0 auto;
 }
 
 .get-team-score-container div {
-  width: 40%;
-  height: 45%;
+  width: 100%;
+  height: 50%;
   background-color: yellow;
   margin: 0 auto;
 }
