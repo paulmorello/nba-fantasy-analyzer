@@ -77,11 +77,14 @@ class App extends Component {
     let player = this.getPlayerStats(playerName);
     let that = this;
 
+    console.log('player stats retrieved and being added to state');
+
     setTimeout( () => {
       player = player.then( data => {
         that.state.players.push(data);
         that.setState(that.state);
       });
+      console.log('player added to state');
     }, 1000);
   }
 
@@ -144,6 +147,7 @@ class App extends Component {
         if (player.name === playerName) {
           console.log('names match');
           console.log(player.toGet);
+
           if (!player.toGet) {
             console.log('changing player to true');
             return {

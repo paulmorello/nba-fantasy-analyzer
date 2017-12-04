@@ -17,26 +17,40 @@ class GetPlayerInput extends Component {
 
   handleClick() {
 
+    let playerName = this.state.playerName;
+    let playerInState = false;
+
     this.props.players.map( (player, index) => {
-      console.log('mapping players');
-      if (player.name === this.state.playerName) {
-        console.log('names match');
+
+      console.log('checking if player exists in state (GetPlayerInput)');
+      console.log(player);
+
+      if (player.name === playerName) {
+
+        playerInState = true;
+        console.log('names match and player in state (GetPlayerInput)');
+
         if (!player.toGet) {
-          this.props.addGetPlayer(this.state.playerName);
+
+          console.log('player is NOT added to the get team');
+
+          this.props.addGetPlayer(playerName);
         } else {
-          return player
+          console.log('player is already in the get team');
         }
       } else {
-        this.props.addPlayerToState(this.state.playerName)
-
-        setTimeout( () => {
-          this.props.addGetPlayer(this.state.playerName)
-          console.log(this.state);
-          return player
-        }, 2000)
-        return player
+        playerInState = false;
       }
+      return player
     })
+
+    if (!playerInState) {
+      this.props.addPlayerToState(playerName)
+
+      setTimeout( () => {
+        this.props.addGetPlayer(playerName)
+      }, 5000)
+    }
 
     // this.props.addPlayerToState(this.state.playerName)
     //
