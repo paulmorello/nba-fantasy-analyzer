@@ -20,20 +20,15 @@ class GetPlayerInput extends Component {
     let playerName = this.state.playerName;
     let playerInState = false;
 
+    // mapping over players in state and adding player if necessary
     this.props.players.map( (player, index) => {
 
-      console.log('checking if player exists in state (GetPlayerInput)');
-      console.log(player);
-
+      // player is already in state
       if (player.name === playerName) {
-
         playerInState = true;
-        console.log('names match and player in state (GetPlayerInput)');
 
+        // check if player is already listed in the get team
         if (!player.toGet) {
-
-          console.log('player is NOT added to the get team');
-
           this.props.addGetPlayer(playerName);
         } else {
           console.log('player is already in the get team');
@@ -44,20 +39,16 @@ class GetPlayerInput extends Component {
       return player
     })
 
+    // if not already in state, app will retrieve stats and add player to state
     if (!playerInState) {
       this.props.addPlayerToState(playerName)
 
+      // needs time to first retrieve the stats and add to state before adding
+      // player to the get team
       setTimeout( () => {
         this.props.addGetPlayer(playerName)
       }, 5000)
     }
-
-    // this.props.addPlayerToState(this.state.playerName)
-    //
-    // setTimeout( () => {
-    //   this.props.addGetPlayer(this.state.playerName)
-    //   console.log(this.state);
-    // }, 5000)
   }
 
   render() {
