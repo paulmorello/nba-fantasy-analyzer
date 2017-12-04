@@ -16,12 +16,39 @@ class GivePlayerInput extends Component {
   }
 
   handleClick() {
-    this.props.addPlayerToState(this.state.playerName)
 
-    setTimeout( () => {
-      this.props.addGivePlayer(this.state.playerName)
-      console.log(this.state);
-    }, 3000)
+    let playerName = this.state.playerName;
+    let playerInState = false;
+
+    // mapping over players in state and adding player if necessary
+    this.props.players.map( (player, index) => {
+
+      // player is already in state
+      if (player.name === playerName) {
+        playerInState = true;
+
+        // check if player is already listed in the get team
+        if (!player.toGive) {
+          this.props.addGivePlayer(playerName);
+        } else {
+          console.log('player is already in the give team');
+        }
+      } else {
+        playerInState = false;
+      }
+      return player
+    })
+
+    // if not already in state, app will retrieve stats and add player to state
+    if (!playerInState) {
+      this.props.addPlayerToState(playerName)
+
+      // needs time to first retrieve the stats and add to state before adding
+      // player to the give team
+      setTimeout( () => {
+        this.props.addGivePlayer(playerName)
+      }, 5000)
+    }
   }
 
   render() {

@@ -131,9 +131,13 @@ class App extends Component {
     this.setState({
       players: this.state.players.map( (player, index) => {
         if (player.name === playerName) {
-          return {
-            ...player,
-            toGive: true
+          if (!player.toGive) {
+            return {
+              ...player,
+              toGive: true
+            }
+          } else {
+            return player
           }
         }
         return player
