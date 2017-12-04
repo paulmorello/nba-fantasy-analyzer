@@ -16,12 +16,34 @@ class GetPlayerInput extends Component {
   }
 
   handleClick() {
-    this.props.addPlayerToState(this.state.playerName)
 
-    setTimeout( () => {
-      this.props.addGetPlayer(this.state.playerName)
-      console.log(this.state);
-    }, 5000)
+    this.props.players.map( (player, index) => {
+      console.log('mapping players');
+      if (player.name === this.state.playerName) {
+        console.log('names match');
+        if (!player.toGet) {
+          this.props.addGetPlayer(this.state.playerName);
+        } else {
+          return player
+        }
+      } else {
+        this.props.addPlayerToState(this.state.playerName)
+
+        setTimeout( () => {
+          this.props.addGetPlayer(this.state.playerName)
+          console.log(this.state);
+          return player
+        }, 2000)
+        return player
+      }
+    })
+
+    // this.props.addPlayerToState(this.state.playerName)
+    //
+    // setTimeout( () => {
+    //   this.props.addGetPlayer(this.state.playerName)
+    //   console.log(this.state);
+    // }, 5000)
   }
 
   render() {

@@ -142,11 +142,20 @@ class App extends Component {
     this.setState({
       players: this.state.players.map( (player, index) => {
         if (player.name === playerName) {
-          return {
-            ...player,
-            toGet: true
+          console.log('names match');
+          console.log(player.toGet);
+          if (!player.toGet) {
+            console.log('changing player to true');
+            return {
+              ...player,
+              toGet: true
+            }
+          } else {
+            console.log('player already entered');
+            return player
           }
         }
+        console.log(player);
         return player
       })
     })
