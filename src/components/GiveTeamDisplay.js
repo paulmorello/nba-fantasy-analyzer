@@ -15,12 +15,17 @@ const GiveTeamDisplay = props =>
       name={player.name}
       team={player.team}
       fgPct={player.fgPct}
+      ftPct={player.ftPct}
       points={player.points}
       assists={player.assists}
       rebounds={player.rebounds}
       blocks={player.blocks}
       steals={player.steals}
+      tov={player.tov}
+      pf={player.pf}
       rating={player.rating}
+      toGet={player.toGet}
+      toGive={player.toGive}
       removeGivePlayer={props.removeGivePlayer} />
   )}
   </div>;

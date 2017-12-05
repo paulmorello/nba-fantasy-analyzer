@@ -46,11 +46,13 @@ class Player extends Component {
         </div>
         <div className="player-stats">
           <span>FG%: { (this.props.fgPct * 100).toFixed(2) }%, </span>
-          <span>Pts: { this.props.points }, </span>
-          <span>Ast: { this.props.assists }, </span>
-          <span>Reb: { this.props.rebounds }, </span>
-          <span>Blk: { this.props.blocks }, </span>
-          <span>Stl: { this.props.steals } </span>
+          <span>FT%: { (this.props.ftPct * 100).toFixed(2) }%, </span>
+          <span>Pts: { this.props.points },  </span>
+          <span>Ast: { this.props.assists },  </span>
+          <span>Reb: { this.props.rebounds },  </span>
+          <span>Blk: { this.props.blocks },  </span>
+          <span>Stl: { this.props.steals },  </span>
+          <span>TO: { this.props.tov }  </span>
         </div>
       </div>
     )
