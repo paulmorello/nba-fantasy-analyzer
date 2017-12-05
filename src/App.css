@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Cuprum');
-@import url('https://fonts.googleapis.com/css?family=Hammersmith+One|Josefin+Slab');
+@import url('https://fonts.googleapis.com/css?family=Ruda');
 
 .App {
   text-align: center;
   box-sizing: border-box;
+  font-family: 'Ruda', sans-serif;
+  font-size: .97em;
 }
 
 .team-selection-container {
   width: 100%;
-
 }
 
 .team-container {
@@ -19,6 +20,34 @@
 
 .team-container div {
   width: 100%;
+}
+
+.team-container div>input {
+  width: 60%;
+  padding: 6px 0;
+
+  font-size: .8em;
+  border: 2px solid #358BBB;
+  border-radius: 3px;
+}
+
+.team-container div>button {
+  width: 20%;
+  padding: 7px 0;
+  margin-left: 5px;
+
+  background-color: #358BBB;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: .9em;
+  border-radius: 3px;
+}
+
+.team-container div>button:hover {
+  border: none;
+  border-radius: 3px;
+  background-color: #0E79C7;
 }
 
 nav {
@@ -77,9 +106,9 @@ ul li {
   padding: 1%;
   overflow: auto;
 
-  border-left: 5px solid #358BBB;
-  border-right: 5px solid #358BBB;
-  border-top: 5px solid #358BBB;
+  border-left: 2px solid #358BBB;
+  border-right: 2px solid #358BBB;
+  border-top: 2px solid #358BBB;
   background-color: #E0E0E0;
   border-radius: 5px;
 }
@@ -91,29 +120,29 @@ ul li {
   padding: 1%;
   overflow: auto;
 
-  border-left: 5px solid #358BBB;
-  border-right: 5px solid #358BBB;
-  border-top: 5px solid #358BBB;
+  border-left: 2px solid #358BBB;
+  border-right: 2px solid #358BBB;
+  border-top: 2px solid #358BBB;
   background-color: #E0E0E0;
   border-radius: 5px;
 }
 
 .give-team-score-container {
   width: 98%;
-  height: 22%;
+  height: 21%;
   margin: 0 auto;
 
   background-color: lightgrey;
-  border: 5px solid #358BBB;
+  border: 2px solid #358BBB;
 }
 
 .get-team-score-container {
   width: 98%;
-  height: 22%;
+  height: 21%;
   margin: 0 auto;
 
   background-color: lightgrey;
-  border: 5px solid #358BBB;
+  border: 2px solid #358BBB;
 }
 
 .give-team-score-container div {
@@ -137,7 +166,7 @@ ul li {
 .team-score {
   margin: 0px 5px 0 30px;
 
-  font-family: 'Hammersmith One', sans-serif;
+  font-family: 'Ruda', sans-serif;
   font-weight: bolder;
 }
 
