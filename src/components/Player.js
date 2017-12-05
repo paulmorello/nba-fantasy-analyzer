@@ -10,13 +10,13 @@ class Player extends Component {
   }
 
   mouseEnter(e) {
-    document.getElementsByClassName("close-btn")[0].classList.add("visible");
-    document.getElementsByClassName("close-btn")[0].classList.remove("hidden");
+    document.getElementById(this.props.name).classList.add("visible");
+    document.getElementById(this.props.name).classList.remove("hidden");
   }
 
   mouseLeave(e) {
-    document.getElementsByClassName("close-btn")[0].classList.remove("visible");
-    document.getElementsByClassName("close-btn")[0].classList.add("hidden");
+    document.getElementById(this.props.name).classList.remove("visible");
+    document.getElementById(this.props.name).classList.add("hidden");
   }
 
   handleClick() {
@@ -31,7 +31,8 @@ class Player extends Component {
 
   render() {
     return(
-      <div className="player-container"
+      <div
+        className="player-container"
         onClick={ this.handleClick }
         onMouseEnter={ e => this.mouseEnter(e) }
         onMouseLeave={ e => this.mouseLeave(e) }>
@@ -41,7 +42,7 @@ class Player extends Component {
         </div>
         <div className="player-rating">
           { this.props.rating }
-          <span className="close-btn hidden">X</span>
+          <span id={ this.props.name } className="close-btn hidden">X</span>
         </div>
         <div className="player-stats">
           <span>FG%: { (this.props.fgPct * 100).toFixed(2) }%, </span>
