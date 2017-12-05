@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Cuprum');
+@import url('https://fonts.googleapis.com/css?family=Hammersmith+One|Josefin+Slab');
 
 .App {
   text-align: center;
+  box-sizing: border-box;
 }
 
 .team-selection-container {
@@ -51,14 +53,13 @@ ul li {
 .trade-summary-container {
   width: 100%;
   height: 70vh;
-  background-color: grey;
+  background-color: #7BB2C7;
 }
 
 .give-team-container {
   width: 45%;
   height: 90%;
   display: inline-block;
-  background-color: navy;
   margin: 1em 1em;
 }
 
@@ -66,54 +67,78 @@ ul li {
   width: 45%;
   height: 90%;
   display: inline-block;
-  background-color: navy;
   margin: 1em 1em;
 }
 
 .give-team-display-container {
-  width: 76%;
-  height: 60%;
-  background-color: green;
-  margin: 5% auto 0 auto;
-  padding: 2%;
+  width: 96%;
+  height: 76%;
+  margin: 0 auto 0 auto;
+  padding: 1%;
   overflow: auto;
+
+  border-left: 5px solid #358BBB;
+  border-right: 5px solid #358BBB;
+  border-top: 5px solid #358BBB;
+  background-color: #E0E0E0;
+  border-radius: 5px;
 }
 
 .get-team-display-container {
-  width: 76%;
-  height: 60%;
-  background-color: green;
-  margin: 5% auto 0 auto;
-  padding: 2%;
+  width: 96%;
+  height: 76%;
+  margin: 0 auto 0 auto;
+  padding: 1%;
   overflow: auto;
+
+  border-left: 5px solid #358BBB;
+  border-right: 5px solid #358BBB;
+  border-top: 5px solid #358BBB;
+  background-color: #E0E0E0;
+  border-radius: 5px;
 }
 
 .give-team-score-container {
-  width: 80%;
-  height: 20%;
-  background-color: lightgrey;
+  width: 98%;
+  height: 22%;
   margin: 0 auto;
+
+  background-color: lightgrey;
+  border: 5px solid #358BBB;
 }
 
 .get-team-score-container {
-  width: 80%;
-  height: 20%;
-  background-color: lightgrey;
+  width: 98%;
+  height: 22%;
   margin: 0 auto;
+
+  background-color: lightgrey;
+  border: 5px solid #358BBB;
 }
 
 .give-team-score-container div {
   width: 100%;
-  height: 50%;
-  background-color: yellow;
+  height: 45%;
   margin: 0 auto;
+  padding: 5px 0 0 0;
+
+  background-color: #B5B5B5;
 }
 
 .get-team-score-container div {
   width: 100%;
-  height: 50%;
-  background-color: yellow;
+  height: 45%;
   margin: 0 auto;
+  padding: 5px 0 0 0;
+
+  background-color: #B5B5B5;
+}
+
+.team-score {
+  margin: 0px 5px 0 30px;
+
+  font-family: 'Hammersmith One', sans-serif;
+  font-weight: bolder;
 }
 
 .player-container {
@@ -121,7 +146,7 @@ ul li {
   height: 20%;
   padding: 3px 0px;
   background-color: #FFFFF5;
-  margin: 0 auto;
+  margin: 2px auto;
   border: 1px solid lightgrey;
   border-radius: 5px;
   box-shadow: .5px .5px .5px;

@@ -4,8 +4,12 @@ import PropTypes from 'prop-types';
 const ScoreGiveTeam = props =>
 
   <div className="give-team-score-container">
-    <div>Team Score: { props.givePlayerScore }, Trade Diff: { props.givePlayerScore - props.getPlayerScore }</div>
-    <div></div>
+    <div>
+      <span className="team-score">Team Score: </span>{ props.givePlayerScore },
+      <span className="team-score">Trade Diff: </span>{ props.givePlayerScore - props.getPlayerScore }
+    </div>
+    <div>
+    </div>
   </div>;
 
   ScoreGiveTeam.propTypes = {
