@@ -89,6 +89,40 @@ class App extends Component {
     }, 1000);
   }
 
+  removeGivePlayer = (playerName) =>
+    this.setState({
+      players: this.state.players.map( (player, index) => {
+        if (player.name === playerName) {
+          if (player.toGive) {
+            return {
+              ...player,
+              toGive: false
+            }
+          } else {
+            return player
+          }
+        }
+        return player
+      })
+    })
+
+  removeGetPlayer = (playerName) =>
+    this.setState({
+      players: this.state.players.map( (player, index) => {
+        if (player.name === playerName) {
+          if (player.toGet) {
+            return {
+              ...player,
+              toGet: false
+            }
+          } else {
+            return player
+          }
+        }
+        return player
+      })
+    })
+
   getRating = (player) => {
 
     const rating =
@@ -103,34 +137,6 @@ class App extends Component {
       (player[0].tov * 1.5))
 
     return Math.round(rating)
-  }
-
-  removeGetPlayer = (playerName) => {
-    this.setState({
-      players: this.state.players.map( (player, index) => {
-        if (player.name === playerName) {
-          return {
-            ...player,
-            toGet: false
-          }
-        }
-        return player
-      })
-    })
-  }
-
-  removeGivePlayer = (playerName) => {
-    this.setState({
-      players: this.state.players.map( (player, index) => {
-        if (player.name === playerName) {
-          return {
-            ...player,
-            toGive: false
-          }
-        }
-        return player
-      })
-    })
   }
 
   getGivePlayerScore = () =>
@@ -195,8 +201,8 @@ class App extends Component {
           players={ this.state.players }
           givePlayerScore={ givePlayerScore }
           getPlayerScore={ getPlayerScore }
-          removeGivePlayer={ this.removeGivePlayer }
-          removeGetPlayer={ this.removeGetPlayer } />
+          removeGetPlayer={ this.removeGetPlayer }
+          removeGivePlayer={ this.removeGivePlayer } />
       </div>
     );
   }

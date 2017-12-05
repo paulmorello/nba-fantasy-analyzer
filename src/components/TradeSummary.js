@@ -12,7 +12,9 @@ const TradeSummary = props =>
   <div className="trade-summary-container">
     <div className="give-team-container">
       <GiveTeamDisplay
-        players={ props.players } />
+        players={ props.players }
+        removeGivePlayer={ props.removeGivePlayer }
+        removeGetPlayer={ props.removeGetPlayer } />
       <ScoreGiveTeam
         players={ props.players }
         givePlayerScore={ props.givePlayerScore }
@@ -20,7 +22,9 @@ const TradeSummary = props =>
     </div>
     <div className="get-team-container">
       <GetTeamDisplay
-        players={ props.players } />
+        players={ props.players }
+        removeGetPlayer={ props.removeGetPlayer }
+        removeGivePlayer={ props.removeGivePlayer } />
       <ScoreGetTeam
         players={ props.players }
         getPlayerScore={ props.getPlayerScore }
@@ -31,7 +35,9 @@ const TradeSummary = props =>
   TradeSummary.propTypes = {
     players: PropTypes.array.isRequired,
     givePlayerScore: PropTypes.number,
-    getPlayerScore: PropTypes.number
+    getPlayerScore: PropTypes.number,
+    removeGetPlayer: PropTypes.func,
+    removeGivePlayer: PropTypes.func
   }
 
 export default TradeSummary;

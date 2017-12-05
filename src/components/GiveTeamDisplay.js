@@ -20,12 +20,15 @@ const GiveTeamDisplay = props =>
       rebounds={player.rebounds}
       blocks={player.blocks}
       steals={player.steals}
-      rating={player.rating} />
+      rating={player.rating}
+      removeGivePlayer={props.removeGivePlayer} />
   )}
   </div>;
 
   GiveTeamDisplay.propTypes = {
-    players: PropTypes.array.isRequired
+    players: PropTypes.array.isRequired,
+    removeGetPlayer: PropTypes.func,
+    removeGivePlayer: PropTypes.func
   }
 
 
