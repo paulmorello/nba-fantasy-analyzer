@@ -9,13 +9,15 @@ const ScoreGetTeam = props =>
       <span className="team-score">Trade Diff: </span> { props.getPlayerScore - props.givePlayerScore }
     </div>
     <div>
+      { props.getPlayerStatDiff }
     </div>
   </div>;
 
   ScoreGetTeam.propTypes = {
     players: PropTypes.array,
     getPlayerScore: PropTypes.number,
-    givePlayerScore: PropTypes.number
+    givePlayerScore: PropTypes.number,
+    getPlayerStatDiff: PropTypes.number
   }
 
 

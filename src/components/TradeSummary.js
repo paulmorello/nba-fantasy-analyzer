@@ -28,7 +28,8 @@ const TradeSummary = props =>
       <ScoreGetTeam
         players={ props.players }
         getPlayerScore={ props.getPlayerScore }
-        givePlayerScore={ props.givePlayerScore } />
+        givePlayerScore={ props.givePlayerScore }
+        getPlayerStatDiff={ props.getPlayerStatDiff } />
     </div>
   </div>;
 
@@ -36,6 +37,7 @@ const TradeSummary = props =>
     players: PropTypes.array.isRequired,
     givePlayerScore: PropTypes.number,
     getPlayerScore: PropTypes.number,
+    getPlayerStatDiff: PropTypes.number,
     removeGetPlayer: PropTypes.func,
     removeGivePlayer: PropTypes.func
   }

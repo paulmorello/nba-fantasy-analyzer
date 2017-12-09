@@ -151,6 +151,56 @@ class App extends Component {
       0
     );
 
+  playerStatDiff = () => {
+    const players = this.state.players;
+    let getStats = {
+      diffPts: 0.0,
+      diffReb: 0.0,
+      diffAst: 0.0,
+      diff3m: 0.0,
+      diffFgPct: 0.0,
+      diffFtPct: 0.0,
+      diffBlk: 0.0,
+      diffStl: 0.0
+    }
+    let giveStats = {
+      diffPts: 0.0,
+      diffReb: 0.0,
+      diffAst: 0.0,
+      diff3m: 0.0,
+      diffFgPct: 0.0,
+      diffFtPct: 0.0,
+      diffBlk: 0.0,
+      diffStl: 0.0
+    }
+
+    for (let i = 0; i < players.length; i++) {
+      if (players[i].toGet) {
+        getStats.diffPts += players[i].points;
+        getStats.diffReb += players[i].rebounds;
+        getStats.diffAst += players[i].assists;
+        getStats.diff3m += players[i].fg3m;
+        getStats.diffFgPct += players[i].fgPct;
+        getStats.diffFtPct += players[i].ftPct;
+        getStats.diffBlk += players[i].blocks;
+        getStats.diffStl += players[i].steals;
+      }
+
+      if (players[i].toGive) {
+        giveStats.diffPts += players[i].points;
+        giveStats.diffReb += players[i].rebounds;
+        giveStats.diffAst += players[i].assists;
+        giveStats.diff3m += players[i].fg3m;
+        giveStats.diffFgPct += players[i].fgPct;
+        giveStats.diffFtPct += players[i].ftPct;
+        giveStats.diffBlk += players[i].blocks;
+        giveStats.diffStl += players[i].steals;
+      }
+    }
+
+    return [getStats, giveStats]
+  }
+
   addGivePlayer = (playerName) =>
     this.setState({
       players: this.state.players.map( (player, index) => {
@@ -188,6 +238,7 @@ class App extends Component {
   render() {
     const givePlayerScore = this.getGivePlayerScore();
     const getPlayerScore = this.getGetPlayerScore();
+    console.log(this.getGetPlayerStatDiff());
 
     return (
       <div className="App">
@@ -201,6 +252,7 @@ class App extends Component {
           players={ this.state.players }
           givePlayerScore={ givePlayerScore }
           getPlayerScore={ getPlayerScore }
+          playerStatDiff={ this.playerStatDiff }
           removeGetPlayer={ this.removeGetPlayer }
           removeGivePlayer={ this.removeGivePlayer } />
       </div>
