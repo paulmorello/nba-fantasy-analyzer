@@ -17,7 +17,6 @@ class App extends Component {
 
   async componentWillMount() {
     this.state.players.push(await this.getPlayerStats('Stephen Curry'));
-    console.log(this.state);
   }
 
   async getPlayerStats (playerName) {
@@ -155,6 +154,7 @@ class App extends Component {
 
     const players = this.state.players;
 
+    // team stats for get team
     let getDiffPts = 0.0;
     let getDiffReb = 0.0;
     let getDiffAst = 0.0;
@@ -164,6 +164,7 @@ class App extends Component {
     let getDiffBlk = 0.0;
     let getDiffStl = 0.0;
 
+    // team stats for give team
     let giveDiffPts = 0.0;
     let giveDiffReb = 0.0;
     let giveDiffAst = 0.0;
@@ -173,8 +174,8 @@ class App extends Component {
     let giveDiffBlk = 0.0;
     let giveDiffStl = 0.0;
 
+    // iterating over players to get overall team stats
     for (let i = 0; i < players.length; i++) {
-      console.log(players[i].points);
       if (players[i].toGet) {
         getDiffPts += players[i].points;
         getDiffReb += players[i].rebounds;
@@ -208,7 +209,6 @@ class App extends Component {
       giveDiffFgPct, giveDiffFtPct, giveDiffBlk, giveDiffStl
     ];
 
-    console.log([getStats, giveStats]);
     return [getStats, giveStats]
   }
 
@@ -249,7 +249,6 @@ class App extends Component {
   render() {
     const givePlayerScore = this.getGivePlayerScore();
     const getPlayerScore = this.getGetPlayerScore();
-    console.log(this.playerStatDiff());
     const playerStatDiff = this.playerStatDiff();
 
     return (
