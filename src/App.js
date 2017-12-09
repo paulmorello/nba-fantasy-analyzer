@@ -152,52 +152,63 @@ class App extends Component {
     );
 
   playerStatDiff = () => {
+
     const players = this.state.players;
-    let getStats = {
-      diffPts: 0.0,
-      diffReb: 0.0,
-      diffAst: 0.0,
-      diff3m: 0.0,
-      diffFgPct: 0.0,
-      diffFtPct: 0.0,
-      diffBlk: 0.0,
-      diffStl: 0.0
-    }
-    let giveStats = {
-      diffPts: 0.0,
-      diffReb: 0.0,
-      diffAst: 0.0,
-      diff3m: 0.0,
-      diffFgPct: 0.0,
-      diffFtPct: 0.0,
-      diffBlk: 0.0,
-      diffStl: 0.0
-    }
+
+    let getDiffPts = 0.0;
+    let getDiffReb = 0.0;
+    let getDiffAst = 0.0;
+    let getDiff3m = 0.0;
+    let getDiffFgPct = 0.0;
+    let getDiffFtPct = 0.0;
+    let getDiffBlk = 0.0;
+    let getDiffStl = 0.0;
+
+    let giveDiffPts = 0.0;
+    let giveDiffReb = 0.0;
+    let giveDiffAst = 0.0;
+    let giveDiff3m = 0.0;
+    let giveDiffFgPct = 0.0;
+    let giveDiffFtPct = 0.0;
+    let giveDiffBlk = 0.0;
+    let giveDiffStl = 0.0;
 
     for (let i = 0; i < players.length; i++) {
+      console.log(players[i].points);
       if (players[i].toGet) {
-        getStats.diffPts += players[i].points;
-        getStats.diffReb += players[i].rebounds;
-        getStats.diffAst += players[i].assists;
-        getStats.diff3m += players[i].fg3m;
-        getStats.diffFgPct += players[i].fgPct;
-        getStats.diffFtPct += players[i].ftPct;
-        getStats.diffBlk += players[i].blocks;
-        getStats.diffStl += players[i].steals;
+        getDiffPts += players[i].points;
+        getDiffReb += players[i].rebounds;
+        getDiffAst += players[i].assists;
+        getDiff3m += players[i].fg3m;
+        getDiffFgPct += players[i].fgPct;
+        getDiffFtPct += players[i].ftPct;
+        getDiffBlk += players[i].blocks;
+        getDiffStl += players[i].steals;
       }
 
       if (players[i].toGive) {
-        giveStats.diffPts += players[i].points;
-        giveStats.diffReb += players[i].rebounds;
-        giveStats.diffAst += players[i].assists;
-        giveStats.diff3m += players[i].fg3m;
-        giveStats.diffFgPct += players[i].fgPct;
-        giveStats.diffFtPct += players[i].ftPct;
-        giveStats.diffBlk += players[i].blocks;
-        giveStats.diffStl += players[i].steals;
+        giveDiffPts += players[i].points;
+        giveDiffReb += players[i].rebounds;
+        giveDiffAst += players[i].assists;
+        giveDiff3m += players[i].fg3m;
+        giveDiffFgPct += players[i].fgPct;
+        giveDiffFtPct += players[i].ftPct;
+        giveDiffBlk += players[i].blocks;
+        giveDiffStl += players[i].steals;
       }
     }
 
+    let getStats = [
+      getDiffPts, getDiffReb, getDiffAst, getDiff3m,
+      getDiffFgPct, getDiffFtPct, getDiffBlk, getDiffStl
+    ];
+
+    let giveStats = [
+      giveDiffPts, giveDiffReb, giveDiffAst, giveDiff3m,
+      giveDiffFgPct, giveDiffFtPct, giveDiffBlk, giveDiffStl
+    ];
+
+    console.log([getStats, giveStats]);
     return [getStats, giveStats]
   }
 
@@ -238,7 +249,8 @@ class App extends Component {
   render() {
     const givePlayerScore = this.getGivePlayerScore();
     const getPlayerScore = this.getGetPlayerScore();
-    console.log(this.getGetPlayerStatDiff());
+    console.log(this.playerStatDiff());
+    const playerStatDiff = this.playerStatDiff();
 
     return (
       <div className="App">
@@ -252,7 +264,7 @@ class App extends Component {
           players={ this.state.players }
           givePlayerScore={ givePlayerScore }
           getPlayerScore={ getPlayerScore }
-          playerStatDiff={ this.playerStatDiff }
+          playerStatDiff={ playerStatDiff }
           removeGetPlayer={ this.removeGetPlayer }
           removeGivePlayer={ this.removeGivePlayer } />
       </div>
