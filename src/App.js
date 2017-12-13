@@ -70,7 +70,7 @@ class App extends Component {
       toGet: false
     }
 
-    return addPlayerToState
+      return addPlayerToState
   }
 
   addPlayer = (playerName) => {

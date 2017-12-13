@@ -26,6 +26,7 @@ class GetPlayerInput extends Component {
       // player is already in state
       if (player.name === playerName) {
         playerInState = true;
+        console.log('player is already in state');
 
         // check if player is already listed in the get team
         if (!player.toGet) {
@@ -33,8 +34,6 @@ class GetPlayerInput extends Component {
         } else {
           console.log('player is already in the get team');
         }
-      } else {
-        playerInState = false;
       }
       return player
     })

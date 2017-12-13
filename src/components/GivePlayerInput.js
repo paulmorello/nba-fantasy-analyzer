@@ -33,9 +33,8 @@ class GivePlayerInput extends Component {
         } else {
           console.log('player is already in the give team');
         }
-      } else {
-        playerInState = false;
       }
+      
       return player
     })
 
