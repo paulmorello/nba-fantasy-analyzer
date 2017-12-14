@@ -11,6 +11,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      isLoading: false,
       players: []
     }
   }
@@ -22,55 +23,64 @@ class App extends Component {
   async getPlayerStats (playerName) {
 
     const player = NBA.findPlayer(playerName);
-    const playerStats = await NBA.stats.playerInfo({ PlayerID: player.playerId })
-                              .then( data => {
-                                return data;
-                              })
-    const newPlayerStats = await NBA.stats.playerProfile({
-                                  PlayerID: player.playerId,
-                                  Season: "2017-18"
-                                })
+
+    if ( player ) {
+      const playerStats = await NBA.stats.playerInfo({ PlayerID: player.playerId })
                                 .then( data => {
                                   return data;
                                 })
+      const newPlayerStats = await NBA.stats.playerProfile({
+                                    PlayerID: player.playerId,
+                                    Season: "2017-18"
+                                  })
+                                  .then( data => {
+                                    return data;
+                                  })
 
-    const playerCurrentSeasonStats = newPlayerStats.seasonTotalsRegularSeason
-                                  .filter( season => season.seasonId === "2017-18" );
+      const playerCurrentSeasonStats = newPlayerStats.seasonTotalsRegularSeason
+                                    .filter( season => season.seasonId === "2017-18" );
 
-    const playerRating = this.getRating(playerCurrentSeasonStats);
+      const playerRating = this.getRating(playerCurrentSeasonStats);
 
-    const addPlayerToState = {
-      name: playerStats.playerHeadlineStats[0].playerName,
-      season: playerCurrentSeasonStats[0].seasonId,
-      team: playerCurrentSeasonStats[0].teamAbbreviation,
-      points: playerStats.playerHeadlineStats[0].pts,
-      assists: playerStats.playerHeadlineStats[0].ast,
-      rebounds: playerCurrentSeasonStats[0].reb,
-      orebounds: playerCurrentSeasonStats[0].oreb,
-      drebounds: playerCurrentSeasonStats[0].dreb,
-      blocks: playerCurrentSeasonStats[0].blk,
-      steals: playerCurrentSeasonStats[0].stl,
-      fg3a: playerCurrentSeasonStats[0].fG3A,
-      fg3m: playerCurrentSeasonStats[0].fG3M,
-      fg3Pct: playerCurrentSeasonStats[0].fg3Pct,
-      fgPct: playerCurrentSeasonStats[0].fgPct,
-      fga: playerCurrentSeasonStats[0].fga,
-      fgm: playerCurrentSeasonStats[0].fgm,
-      ftPct: playerCurrentSeasonStats[0].ftPct,
-      fta: playerCurrentSeasonStats[0].fta,
-      ftm: playerCurrentSeasonStats[0].ftm,
-      gp: playerCurrentSeasonStats[0].gp,
-      gs: playerCurrentSeasonStats[0].gs,
-      min: playerCurrentSeasonStats[0].min,
-      pf: playerCurrentSeasonStats[0].pf,
-      tov: playerCurrentSeasonStats[0].tov,
-      age: playerCurrentSeasonStats[0].playerAge,
-      rating: playerRating,
-      toGive: false,
-      toGet: false
+      const addPlayerToState = {
+        name: playerStats.playerHeadlineStats[0].playerName,
+        season: playerCurrentSeasonStats[0].seasonId,
+        team: playerCurrentSeasonStats[0].teamAbbreviation,
+        points: playerStats.playerHeadlineStats[0].pts,
+        assists: playerStats.playerHeadlineStats[0].ast,
+        rebounds: playerCurrentSeasonStats[0].reb,
+        orebounds: playerCurrentSeasonStats[0].oreb,
+        drebounds: playerCurrentSeasonStats[0].dreb,
+        blocks: playerCurrentSeasonStats[0].blk,
+        steals: playerCurrentSeasonStats[0].stl,
+        fg3a: playerCurrentSeasonStats[0].fG3A,
+        fg3m: playerCurrentSeasonStats[0].fG3M,
+        fg3Pct: playerCurrentSeasonStats[0].fg3Pct,
+        fgPct: playerCurrentSeasonStats[0].fgPct,
+        fga: playerCurrentSeasonStats[0].fga,
+        fgm: playerCurrentSeasonStats[0].fgm,
+        ftPct: playerCurrentSeasonStats[0].ftPct,
+        fta: playerCurrentSeasonStats[0].fta,
+        ftm: playerCurrentSeasonStats[0].ftm,
+        gp: playerCurrentSeasonStats[0].gp,
+        gs: playerCurrentSeasonStats[0].gs,
+        min: playerCurrentSeasonStats[0].min,
+        pf: playerCurrentSeasonStats[0].pf,
+        tov: playerCurrentSeasonStats[0].tov,
+        age: playerCurrentSeasonStats[0].playerAge,
+        rating: playerRating,
+        toGive: false,
+        toGet: false
+      }
+
+        return addPlayerToState
+
+    } else {
+      console.log('Please enter a listed player');
+      return 'Please enter a listed player'
     }
 
-      return addPlayerToState
+
   }
 
   addPlayer = (playerName) => {
@@ -209,7 +219,6 @@ class App extends Component {
       giveDiffFgPct, giveDiffFtPct, giveDiffBlk, giveDiffStl
     ];
 
-    console.log([getStats, giveStats]);
     return [getStats, giveStats]
   }
 
@@ -247,6 +256,22 @@ class App extends Component {
       })
     })
 
+  setLoadingState = () => {
+
+    let loadingState = this.state.isLoading;
+
+    if (loadingState) {
+      this.setState({
+        isLoading: false
+      })
+    } else {
+      this.setState({
+        isLoading: true
+      })
+    }
+  }
+
+
   render() {
     const givePlayerScore = this.getGivePlayerScore();
     const getPlayerScore = this.getGetPlayerScore();
@@ -262,6 +287,8 @@ class App extends Component {
           addPlayerToState={ this.addPlayer } />
         <TradeSummary
           players={ this.state.players }
+          isLoading={ this.state.isLoading }
+          setLoadingState={ this.setLoadingState }
           givePlayerScore={ givePlayerScore }
           getPlayerScore={ getPlayerScore }
           playerStatDiff={ playerStatDiff }

@@ -30,6 +30,7 @@ class Player extends Component {
   }
 
   render() {
+
     return(
       <div
         className="player-container"

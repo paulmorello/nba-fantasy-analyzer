@@ -13,6 +13,8 @@ const TradeSummary = props =>
     <div className="give-team-container">
       <GiveTeamDisplay
         players={ props.players }
+        isLoading={ props.isLoading }
+        setLoadingState={ props.setLoadingState }
         removeGivePlayer={ props.removeGivePlayer }
         removeGetPlayer={ props.removeGetPlayer } />
       <ScoreGiveTeam
@@ -24,6 +26,8 @@ const TradeSummary = props =>
     <div className="get-team-container">
       <GetTeamDisplay
         players={ props.players }
+        isLoading={ props.isLoading }
+        setLoadingState={ props.setLoadingState }
         removeGetPlayer={ props.removeGetPlayer }
         removeGivePlayer={ props.removeGivePlayer } />
       <ScoreGetTeam
@@ -36,6 +40,8 @@ const TradeSummary = props =>
 
   TradeSummary.propTypes = {
     players: PropTypes.array.isRequired,
+    isLoading: PropTypes.bool.isRequired,
+    setLoadingState: PropTypes.func.isRequired,
     givePlayerScore: PropTypes.number,
     getPlayerScore: PropTypes.number,
     removeGetPlayer: PropTypes.func,
