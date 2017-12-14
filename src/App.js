@@ -209,6 +209,7 @@ class App extends Component {
       giveDiffFgPct, giveDiffFtPct, giveDiffBlk, giveDiffStl
     ];
 
+    console.log([getStats, giveStats]);
     return [getStats, giveStats]
   }
 
