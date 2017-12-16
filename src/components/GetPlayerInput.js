@@ -17,6 +17,9 @@ class GetPlayerInput extends Component {
 
   handleClick() {
 
+    // change the state to loading
+    this.props.setLoadingState()
+
     let playerName = this.state.playerName;
     let playerInState = false;
 
@@ -31,8 +34,10 @@ class GetPlayerInput extends Component {
         // check if player is already listed in the get team
         if (!player.toGet) {
           this.props.addGetPlayer(playerName);
+          this.props.setLoadingState()
         } else {
           console.log('player is already in the get team');
+          this.props.setLoadingState()
         }
       }
       return player
@@ -46,6 +51,7 @@ class GetPlayerInput extends Component {
       // player to the get team
       setTimeout( () => {
         this.props.addGetPlayer(playerName)
+        this.props.setLoadingState()
       }, 5000)
     }
   }
@@ -66,7 +72,9 @@ class GetPlayerInput extends Component {
   GetPlayerInput.propTypes = {
     players: PropTypes.array,
     addGetPlayer: PropTypes.func,
-    addPlayerToState: PropTypes.func
+    addPlayerToState: PropTypes.func,
+    isLoading: PropTypes.bool.isRequired,
+    setLoadingState: PropTypes.func.isRequired
   }
 
 

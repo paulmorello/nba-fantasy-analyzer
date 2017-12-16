@@ -66,7 +66,9 @@ class GivePlayerInput extends Component {
   GivePlayerInput.propTypes = {
     players: PropTypes.array.isRequired,
     addGivePlayer: PropTypes.func,
-    addPlayerToState: PropTypes.func
+    addPlayerToState: PropTypes.func,
+    isLoading: PropTypes.bool.isRequired,
+    setLoadingState: PropTypes.func.isRequired
   }
 
 

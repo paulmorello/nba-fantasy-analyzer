@@ -282,6 +282,8 @@ class App extends Component {
         <Navbar />
         <TeamSelection
           players={ this.state.players }
+          isLoading={ this.state.isLoading }
+          setLoadingState={ this.setLoadingState }
           addGivePlayer={ this.addGivePlayer }
           addGetPlayer={ this.addGetPlayer }
           addPlayerToState={ this.addPlayer } />

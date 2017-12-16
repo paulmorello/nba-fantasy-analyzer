@@ -11,13 +11,17 @@ const GetTeam = props =>
     <GetPlayerInput
       players={ props.players }
       addGetPlayer={ props.addGetPlayer }
-      addPlayerToState={ props.addPlayerToState } />
+      addPlayerToState={ props.addPlayerToState }
+      isLoading={ props.isLoading }
+      setLoadingState={ this.setLoadingState } />
   </div>;
 
   GetTeam.propTypes = {
     players: PropTypes.array,
     addGetPlayer: PropTypes.func,
-    addPlayerToState: PropTypes.func
+    addPlayerToState: PropTypes.func,
+    isLoading: PropTypes.bool.isRequired,
+    setLoadingState: PropTypes.func.isRequired
   }
 
 

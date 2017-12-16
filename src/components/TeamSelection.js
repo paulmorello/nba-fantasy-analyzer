@@ -12,18 +12,24 @@ const TeamSelection = props =>
     <GiveTeam
       players={ props.players }
       addGivePlayer={ props.addGivePlayer }
-      addPlayerToState={ props.addPlayerToState } />
+      addPlayerToState={ props.addPlayerToState }
+      isLoading={ props.isLoading }
+      setLoadingState={ this.setLoadingState } />
     <GetTeam
       players={ props.players }
       addGetPlayer={ props.addGetPlayer }
-      addPlayerToState={ props.addPlayerToState } />
+      addPlayerToState={ props.addPlayerToState }
+      isLoading={ props.isLoading }
+      setLoadingState={ this.setLoadingState } />
   </div>;
 
   TeamSelection.propTypes = {
     players: PropTypes.array.isRequired,
     addGivePlayer: PropTypes.func.isRequired,
     addGetPlayer: PropTypes.func.isRequired,
-    addPlayerToState: PropTypes.func.isRequired
+    addPlayerToState: PropTypes.func.isRequired,
+    isLoading: PropTypes.bool.isRequired,
+    setLoadingState: PropTypes.func.isRequired
   }
 
 export default TeamSelection;
