@@ -13,7 +13,7 @@ const GiveTeam = props =>
       addGivePlayer={ props.addGivePlayer }
       addPlayerToState={ props.addPlayerToState }
       isLoading={ props.isLoading }
-      setLoadingState={ this.setLoadingState } />
+      setLoadingState={ props.setLoadingState } />
   </div>;
 
   GiveTeam.propTypes = {

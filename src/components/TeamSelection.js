@@ -14,13 +14,13 @@ const TeamSelection = props =>
       addGivePlayer={ props.addGivePlayer }
       addPlayerToState={ props.addPlayerToState }
       isLoading={ props.isLoading }
-      setLoadingState={ this.setLoadingState } />
+      setLoadingState={ props.setLoadingState } />
     <GetTeam
       players={ props.players }
       addGetPlayer={ props.addGetPlayer }
       addPlayerToState={ props.addPlayerToState }
       isLoading={ props.isLoading }
-      setLoadingState={ this.setLoadingState } />
+      setLoadingState={ props.setLoadingState } />
   </div>;
 
   TeamSelection.propTypes = {
