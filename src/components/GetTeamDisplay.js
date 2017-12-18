@@ -48,6 +48,7 @@ class GetTeamDisplay extends Component {
     players: PropTypes.array.isRequired,
     isLoading: PropTypes.bool.isRequired,
     setLoadingState: PropTypes.func.isRequired,
+    setNotLoadingState: PropTypes.func.isRequired,
     removeGetPlayer: PropTypes.func,
     removeGivePlayer: PropTypes.func
   }

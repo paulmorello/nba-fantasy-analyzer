@@ -27,14 +27,13 @@ class GivePlayerInput extends Component {
       if (player.name === playerName) {
         playerInState = true;
 
-        // check if player is already listed in the get team
+        // check if player is already listed in the give team
         if (!player.toGive) {
           this.props.addGivePlayer(playerName);
         } else {
           console.log('player is already in the give team');
         }
       }
-
       return player
     })
 
@@ -68,7 +67,8 @@ class GivePlayerInput extends Component {
     addGivePlayer: PropTypes.func,
     addPlayerToState: PropTypes.func,
     isLoading: PropTypes.bool.isRequired,
-    setLoadingState: PropTypes.func.isRequired
+    setLoadingState: PropTypes.func.isRequired,
+    setNotLoadingState: PropTypes.func.isRequired
   }
 
 

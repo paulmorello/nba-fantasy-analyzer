@@ -257,18 +257,15 @@ class App extends Component {
     })
 
   setLoadingState = () => {
+    console.log(this.state.isLoading);
+    this.setState({isLoading: true});
+    console.log(this.state.isLoading);
+  }
 
-    let loadingState = this.state.isLoading;
-
-    if (loadingState) {
-      this.setState({
-        isLoading: false
-      })
-    } else {
-      this.setState({
-        isLoading: true
-      })
-    }
+  setNotLoadingState = () => {
+    console.log(this.state.isLoading);
+    this.setState({ isLoading: false })
+    console.log(this.state.isLoading);
   }
 
 
@@ -284,6 +281,7 @@ class App extends Component {
           players={ this.state.players }
           isLoading={ this.state.isLoading }
           setLoadingState={ this.setLoadingState }
+          setNotLoadingState={ this.setNotLoadingState }
           addGivePlayer={ this.addGivePlayer }
           addGetPlayer={ this.addGetPlayer }
           addPlayerToState={ this.addPlayer } />
@@ -291,6 +289,7 @@ class App extends Component {
           players={ this.state.players }
           isLoading={ this.state.isLoading }
           setLoadingState={ this.setLoadingState }
+          setNotLoadingState={ this.setNotLoadingState }
           givePlayerScore={ givePlayerScore }
           getPlayerScore={ getPlayerScore }
           playerStatDiff={ playerStatDiff }

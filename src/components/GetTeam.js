@@ -13,7 +13,8 @@ const GetTeam = props =>
       addGetPlayer={ props.addGetPlayer }
       addPlayerToState={ props.addPlayerToState }
       isLoading={ props.isLoading }
-      setLoadingState={ props.setLoadingState } />
+      setLoadingState={ props.setLoadingState }
+      setNotLoadingState={ props.setNotLoadingState } />
   </div>;
 
   GetTeam.propTypes = {
@@ -21,7 +22,8 @@ const GetTeam = props =>
     addGetPlayer: PropTypes.func,
     addPlayerToState: PropTypes.func,
     isLoading: PropTypes.bool.isRequired,
-    setLoadingState: PropTypes.func.isRequired
+    setLoadingState: PropTypes.func.isRequired,
+    setNotLoadingState: PropTypes.func.isRequired
   }
 
 

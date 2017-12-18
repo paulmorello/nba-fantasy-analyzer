@@ -15,6 +15,7 @@ const TradeSummary = props =>
         players={ props.players }
         isLoading={ props.isLoading }
         setLoadingState={ props.setLoadingState }
+        setNotLoadingState={ props.setNotLoadingState }
         removeGivePlayer={ props.removeGivePlayer }
         removeGetPlayer={ props.removeGetPlayer } />
       <ScoreGiveTeam
@@ -28,6 +29,7 @@ const TradeSummary = props =>
         players={ props.players }
         isLoading={ props.isLoading }
         setLoadingState={ props.setLoadingState }
+        setNotLoadingState={ props.setNotLoadingState }
         removeGetPlayer={ props.removeGetPlayer }
         removeGivePlayer={ props.removeGivePlayer } />
       <ScoreGetTeam
@@ -42,6 +44,7 @@ const TradeSummary = props =>
     players: PropTypes.array.isRequired,
     isLoading: PropTypes.bool.isRequired,
     setLoadingState: PropTypes.func.isRequired,
+    setNotLoadingState: PropTypes.func.isRequired,
     givePlayerScore: PropTypes.number,
     getPlayerScore: PropTypes.number,
     removeGetPlayer: PropTypes.func,
