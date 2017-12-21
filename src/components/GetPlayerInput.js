@@ -17,6 +17,9 @@ class GetPlayerInput extends Component {
 
   handleClick() {
 
+    // change the loading state to loading
+    this.props.setLoadingState();
+
     let playerName = this.state.playerName;
     let playerInState = false;
 
@@ -27,6 +30,8 @@ class GetPlayerInput extends Component {
       if (player.name === playerName) {
         playerInState = true;
         console.log('player is already in state');
+        // change the loading state back to not loading
+        this.props.setNotLoadingState();
 
         // check if player is already listed in the get team
         if (!player.toGet) {

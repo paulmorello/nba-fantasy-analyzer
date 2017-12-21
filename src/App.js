@@ -98,6 +98,7 @@ class App extends Component {
     }, 1000);
 
     setTimeout( () => {
+      // to make sure the loading state is set to not loading
       this.setNotLoadingState();
     }, 5000)
   }
