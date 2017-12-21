@@ -17,6 +17,8 @@ class GivePlayerInput extends Component {
 
   handleClick() {
 
+    this.props.setLoadingState();
+
     let playerName = this.state.playerName;
     let playerInState = false;
 
@@ -26,7 +28,7 @@ class GivePlayerInput extends Component {
       // player is already in state
       if (player.name === playerName) {
         playerInState = true;
-
+        this.props.setNotLoadingState()
         // check if player is already listed in the give team
         if (!player.toGive) {
           this.props.addGivePlayer(playerName);

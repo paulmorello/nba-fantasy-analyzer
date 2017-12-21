@@ -96,6 +96,10 @@ class App extends Component {
         that.setState(that.state);
       });
     }, 1000);
+
+    setTimeout( () => {
+      this.setNotLoadingState();
+    }, 5000)
   }
 
   removeGivePlayer = (playerName) =>
