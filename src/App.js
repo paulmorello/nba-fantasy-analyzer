@@ -262,15 +262,11 @@ class App extends Component {
     })
 
   setLoadingState = () => {
-    console.log(this.state.isLoading);
     this.setState({isLoading: true});
-    console.log(this.state.isLoading);
   }
 
   setNotLoadingState = () => {
-    console.log(this.state.isLoading);
     this.setState({ isLoading: false })
-    console.log(this.state.isLoading);
   }
 
 
