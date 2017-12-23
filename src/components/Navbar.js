@@ -5,13 +5,11 @@ const Navbar = () =>
   <header>
     <nav>
       <div className="navbar-left">
-        <h3>NBA Trade Analyzer</h3>
+        <h3 className="logo">ProScout</h3>
       </div>
       <div className="navbar-right">
         <ul>
-          <li>Link 1</li>
-          <li>Link 2</li>
-          <li>Link 3</li>
+
         </ul>
       </div>
     </nav>

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Cuprum');
 @import url('https://fonts.googleapis.com/css?family=Ruda');
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
 
 .App {
   text-align: center;
@@ -58,6 +59,12 @@ nav {
   width: 48%;
   display: inline-block;
   text-align: left;
+}
+
+.logo {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.5em;
+  color: #7BB2C7;
 }
 
 .navbar-right {
