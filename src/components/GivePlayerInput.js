@@ -65,6 +65,7 @@ class GivePlayerInput extends Component {
           placeholder="Enter a player"
           list="players"
           onChange={ e => this.handleChange(e) } />
+        <Autocomplete />
         <button onClick={ this.handleClick }>Add Player</button>
       </div>
     )
