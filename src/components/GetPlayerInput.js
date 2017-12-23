@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+// file imports
+import Autocomplete from './Autocomplete';
+
 class GetPlayerInput extends Component {
 
   constructor() {
@@ -61,7 +64,9 @@ class GetPlayerInput extends Component {
         <input
           type="text"
           placeholder="Enter a player"
+          list="players"
           onChange={ e => this.handleChange(e) } />
+          <Autocomplete />
         <button onClick={ this.handleClick }>Add Player</button>
       </div>
     )
