@@ -22,13 +22,4 @@ class Autocomplete extends Component {
   }
 }
 
-
 export default Autocomplete;
-
-// let playerList17 = document.getElementsByClassName('flexpop')
-// let newPlayerList17 = []
-// for ( i=1; i < playerList17.length; i++) {
-//   if (playerList17[i].innerText !== "") {
-//     newPlayerList17.push(playerList17[i].innerText)
-//   }
-// }

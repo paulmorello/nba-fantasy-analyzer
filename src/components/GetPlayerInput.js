@@ -59,17 +59,32 @@ class GetPlayerInput extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <input
-          type="text"
-          placeholder="Enter a player"
-          list="players"
-          onChange={ e => this.handleChange(e) } />
-          <Autocomplete />
-        <button onClick={ this.handleClick }>Add Player</button>
-      </div>
-    )
+    const playerInputLength = this.state.playerName.length;
+
+    if (playerInputLength >= 3) {
+      return (
+        <div>
+          <input
+            type="text"
+            placeholder="Enter a player"
+            list="players"
+            onChange={ e => this.handleChange(e) } />
+            <Autocomplete />
+          <button onClick={ this.handleClick }>Add Player</button>
+        </div>
+      )
+    } else {
+      return (
+        <div>
+          <input
+            type="text"
+            placeholder="Enter a player"
+            list="players"
+            onChange={ e => this.handleChange(e) } />
+          <button onClick={ this.handleClick }>Add Player</button>
+        </div>
+      )
+    }
   }
 }
 
