@@ -6,6 +6,7 @@ import NBA from 'nba';
 import Navbar from './components/Navbar';
 import TeamSelection from './components/TeamSelection';
 import TradeSummary from './components/TradeSummary';
+import PlayerSummary from './components/PlayerSummary';
 
 class App extends Component {
   constructor() {
@@ -39,6 +40,8 @@ class App extends Component {
 
       const playerCurrentSeasonStats = newPlayerStats.seasonTotalsRegularSeason
                                     .filter( season => season.seasonId === "2017-18" );
+
+      console.log(playerCurrentSeasonStats, newPlayerStats);
 
       const playerRating = this.getRating(playerCurrentSeasonStats);
 
