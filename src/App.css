@@ -85,6 +85,20 @@ ul li {
   text-align: left;
 }
 
+/* Player summary container */
+.player-summary-container {
+  width: 100%;
+  height: 30vh;
+  background-color: lightgrey;
+}
+
+.player-search-container {
+  width: 50%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: rgb(53, 183, 41);
+}
+
 /* Place Holder */
 .trade-summary-container {
   width: 100%;

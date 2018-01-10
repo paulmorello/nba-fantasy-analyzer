@@ -281,6 +281,7 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
+        <PlayerSummary />
         <TeamSelection
           players={ this.state.players }
           isLoading={ this.state.isLoading }
