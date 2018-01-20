@@ -11,6 +11,8 @@ class PlayerSearch extends Component {
       <div className="player-search-container">
         <input
           type="text"
+          placeholder="Enter a player"
+          list="players"
           placeholder="Enter a player" />
           <Autocomplete />
         <button>Add Player</button>
