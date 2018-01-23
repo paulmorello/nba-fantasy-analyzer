@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 // file imports
 import PlayerSearch from './PlayerSearch';
+import PlayerCardDetailed from './PlayerCardDetailed';
 
 class PlayerSummary extends Component {
 
@@ -10,6 +11,7 @@ class PlayerSummary extends Component {
     return (
       <div className="player-summary-container">
         <PlayerSearch />
+        <PlayerCardDetailed />
       </div>
     )
   }
