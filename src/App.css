@@ -94,9 +94,16 @@ ul li {
 
 .player-search-container {
   width: 50%;
-  height: 100%;
+  height: 20%;
   margin: 0 auto;
   background-color: rgb(53, 183, 41);
+}
+
+.player-card-detailed-container {
+  width: 50%;
+  height: 80%;
+  margin: 0 auto;
+  background-color: blue;
 }
 
 /* Place Holder */
