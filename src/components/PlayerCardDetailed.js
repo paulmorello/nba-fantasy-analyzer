@@ -6,6 +6,7 @@ class PlayerCardDetailed extends Component {
   render() {
     return (
       <div className="player-card-detailed-container">
+        
       </div>
     )
   }
