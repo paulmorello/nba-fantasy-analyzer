@@ -6,6 +6,10 @@ class PlayerStatsCard extends Component {
   render() {
     return (
       <div className="player-stats-card">
+        <div className="player-profile-pic">
+        </div>
+        <div className="player-profile-info">
+        </div>
       </div>
     )
   }
