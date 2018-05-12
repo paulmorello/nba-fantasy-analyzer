@@ -9,7 +9,6 @@ const Navbar = () =>
       </div>
       <div className="navbar-right">
         <ul>
-
         </ul>
       </div>
     </nav>

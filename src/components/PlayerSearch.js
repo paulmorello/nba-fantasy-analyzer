@@ -6,6 +6,13 @@ import Autocomplete from './Autocomplete.js';
 
 class PlayerSearch extends Component {
 
+  constructor() {
+    super();
+    this.state = {
+      playerName: ''
+    };
+  }
+
   render() {
     return (
       <div className="player-search-container">
