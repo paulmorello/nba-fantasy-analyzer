@@ -10,14 +10,35 @@ class PlayerSummary extends Component {
   render() {
     return (
       <div className="player-summary-container">
-        <PlayerSearch />
-        <PlayerCardDetailed />
+        <PlayerSearch
+          players={ this.props.players }
+          isLoading={ this.props.isLoading }
+          setLoadingState={ this.props.setLoadingState }
+          setNotLoadingState={ this.props.setNotLoadingState }
+          addGivePlayer={ this.addGivePlayer }
+          addGetPlayer={ this.addGetPlayer }
+          addPlayerToState={ this.addPlayerToState } />
+        <PlayerCardDetailed
+          players={ this.props.players }
+          isLoading={ this.props.isLoading }
+          setLoadingState={ this.props.setLoadingState }
+          setNotLoadingState={ this.props.setNotLoadingState }
+          addGivePlayer={ this.addGivePlayer }
+          addGetPlayer={ this.addGetPlayer }
+          addPlayerToState={ this.addPlayerToState } />
       </div>
     )
   }
 }
 
   PlayerSummary.propTypes = {
+    players: PropTypes.array.isRequired,
+    isLoading: PropTypes.bool.isRequired,
+    setLoadingState: PropTypes.func.isRequired,
+    setNotLoadingState: PropTypes.func.isRequired,
+    addGivePlayer: PropTypes.func,
+    addGetPlayer: PropTypes.func,
+    addPlayerToState: PropTypes.func
   }
 
 

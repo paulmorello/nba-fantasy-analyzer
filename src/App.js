@@ -281,7 +281,14 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
-        <PlayerSummary />
+        <PlayerSummary
+          players={ this.state.players }
+          isLoading={ this.state.isLoading }
+          setLoadingState={ this.setLoadingState }
+          setNotLoadingState={ this.setNotLoadingState }
+          addGivePlayer={ this.addGivePlayer }
+          addGetPlayer={ this.addGetPlayer }
+          addPlayerToState={ this.addPlayerToState }/>
         <TeamSelection
           players={ this.state.players }
           isLoading={ this.state.isLoading }

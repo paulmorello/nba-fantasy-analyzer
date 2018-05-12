@@ -20,10 +20,8 @@ class PlayerSearch extends Component {
   }
 
   handleClick() {
-    console.log('clicked')
+    console.log(this.props.players)
   }
-
-
 
   render() {
     return (
@@ -42,6 +40,13 @@ class PlayerSearch extends Component {
 }
 
   PlayerSearch.propTypes = {
+    players: PropTypes.array.isRequired,
+    isLoading: PropTypes.bool.isRequired,
+    setLoadingState: PropTypes.func.isRequired,
+    setNotLoadingState: PropTypes.func.isRequired,
+    addGivePlayer: PropTypes.func,
+    addGetPlayer: PropTypes.func,
+    addPlayerToState: PropTypes.func
   }
 
 
