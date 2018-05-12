@@ -11,7 +11,19 @@ class PlayerSearch extends Component {
     this.state = {
       playerName: ''
     };
+
+    this.handleClick = this.handleClick.bind(this)
   }
+
+  handleChange(e) {
+    this.setState({ playerName: e.target.value })
+  }
+
+  handleClick() {
+    console.log('clicked')
+  }
+
+
 
   render() {
     return (
@@ -20,9 +32,10 @@ class PlayerSearch extends Component {
           type="text"
           placeholder="Enter a player"
           list="players"
-          placeholder="Enter a player" />
+          placeholder="Enter a player"
+          onChange={ e => this.handleChange(e) } />
           <Autocomplete />
-        <button>Add Player</button>
+        <button onClick={ this.handleClick }>Add Player</button>
       </div>
     )
   }
