@@ -20,7 +20,13 @@ class PlayerSearch extends Component {
   }
 
   handleClick() {
-    console.log(this.props.players)
+    console.log(this.props.players.map( (player, index) => {
+      if (player.name === this.state.playerName) {
+        return player
+      } else {
+        return 'player not in state'
+      }
+    }))
   }
 
   render() {
