@@ -22,13 +22,14 @@ class PlayerSummary extends Component {
 
         <PlayerCardDetailed
           players={ this.props.players }
+          spotlightPlayer={ this.props.spotlightPlayer }
           isLoading={ this.props.isLoading }
           setLoadingState={ this.props.setLoadingState }
           setNotLoadingState={ this.props.setNotLoadingState }
           addGivePlayer={ this.addGivePlayer }
           addGetPlayer={ this.addGetPlayer }
           addPlayerToState={ this.addPlayerToState } />
-          
+
       </div>
     )
   }
@@ -36,6 +37,7 @@ class PlayerSummary extends Component {
 
   PlayerSummary.propTypes = {
     players: PropTypes.array.isRequired,
+    spotlightPlayer: PropTypes.string.isRequired,
     isLoading: PropTypes.bool.isRequired,
     setLoadingState: PropTypes.func.isRequired,
     setNotLoadingState: PropTypes.func.isRequired,

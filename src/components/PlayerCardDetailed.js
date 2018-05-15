@@ -6,6 +6,8 @@ import PlayerStatsCard from './PlayerStatsCard';
 
 class PlayerCardDetailed extends Component {
 
+  
+
   render() {
     return (
       <div className="player-card-detailed-container">
@@ -17,6 +19,7 @@ class PlayerCardDetailed extends Component {
 
   PlayerCardDetailed.propTypes = {
     players: PropTypes.array.isRequired,
+    spotlightPlayer: PropTypes.string.isRequired,
     isLoading: PropTypes.bool.isRequired,
     setLoadingState: PropTypes.func.isRequired,
     setNotLoadingState: PropTypes.func.isRequired,

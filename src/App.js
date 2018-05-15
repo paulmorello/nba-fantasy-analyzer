@@ -12,6 +12,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      spotlightPlayer: 'Stephen Curry',
       isLoading: false,
       players: []
     }
@@ -284,6 +285,7 @@ class App extends Component {
         <PlayerSummary
           players={ this.state.players }
           isLoading={ this.state.isLoading }
+          spotlightPlayer={ this.state.spotlightPlayer }
           setLoadingState={ this.setLoadingState }
           setNotLoadingState={ this.setNotLoadingState }
           addGivePlayer={ this.addGivePlayer }
