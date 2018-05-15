@@ -6,9 +6,25 @@ import PlayerStatsCard from './PlayerStatsCard';
 
 class PlayerCardDetailed extends Component {
 
-  
+  componentWillMount() {
+    const newSpotlightPlayer = this.getSpotlightPlayer(this.props.spotlightPlayer);
+    console.log(newSpotlightPlayer);
+  }
+
+  getSpotlightPlayer(spotlightPlayer) {
+
+    this.props.players.map( (player, index) => {
+      console.log(player.name);
+      if ( player.name === spotlightPlayer.name ) {
+        return player
+      } else {
+        return 'Please select a player'
+      }
+    })
+  }
 
   render() {
+
     return (
       <div className="player-card-detailed-container">
         <PlayerStatsCard />

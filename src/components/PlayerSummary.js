@@ -10,7 +10,6 @@ class PlayerSummary extends Component {
   render() {
     return (
       <div className="player-summary-container">
-
         <PlayerSearch
           players={ this.props.players }
           isLoading={ this.props.isLoading }
@@ -19,7 +18,6 @@ class PlayerSummary extends Component {
           addGivePlayer={ this.addGivePlayer }
           addGetPlayer={ this.addGetPlayer }
           addPlayerToState={ this.addPlayerToState } />
-
         <PlayerCardDetailed
           players={ this.props.players }
           spotlightPlayer={ this.props.spotlightPlayer }
@@ -29,7 +27,6 @@ class PlayerSummary extends Component {
           addGivePlayer={ this.addGivePlayer }
           addGetPlayer={ this.addGetPlayer }
           addPlayerToState={ this.addPlayerToState } />
-
       </div>
     )
   }
