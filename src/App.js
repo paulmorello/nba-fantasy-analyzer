@@ -273,12 +273,22 @@ class App extends Component {
     this.setState({ isLoading: false })
   }
 
+  getSpotlightPlayer() {
+    this.state.players.map( (player, index) => {
+      if ( player.name === this.state.spotlightPlayer ) {
+        return player
+      } else {
+        return 'Please select a player'
+      }
+    })
+  }
+
 
   render() {
     const givePlayerScore = this.getGivePlayerScore();
     const getPlayerScore = this.getGetPlayerScore();
     const playerStatDiff = this.playerStatDiff();
-
+    console.log(this.getSpotlightPlayer());
     return (
       <div className="App">
         <Navbar />

@@ -12,16 +12,6 @@ class PlayerCardDetailed extends Component {
     }
   }
 
-  componentWillMount() {
-    this.props.players.map( (player, index) => {
-      if ( player.name === this.props.spotlightPlayer.name ) {
-        return player
-      } else {
-        return 'Please select a player'
-      }
-    })
-  }
-
   render() {
       console.log(this.props.spotlightPlayer);
     return (
