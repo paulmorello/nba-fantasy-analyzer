@@ -277,9 +277,7 @@ class App extends Component {
     this.state.players.map( (player, index) => {
       if ( player.name === this.state.spotlightPlayer ) {
         return player
-      } else {
-        return 'Please select a player'
-      }
+      } 
     })
   }
 
@@ -289,6 +287,7 @@ class App extends Component {
     const getPlayerScore = this.getGetPlayerScore();
     const playerStatDiff = this.playerStatDiff();
     console.log(this.getSpotlightPlayer());
+
     return (
       <div className="App">
         <Navbar />
