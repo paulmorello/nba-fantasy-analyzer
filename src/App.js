@@ -20,8 +20,6 @@ class App extends Component {
 
   async componentWillMount() {
     this.state.players.push(await this.getPlayerStats('Stephen Curry'));
-
-    this.getSpotlightPlayer();
   }
 
   async getPlayerStats (playerName) {
@@ -43,8 +41,6 @@ class App extends Component {
 
       const playerCurrentSeasonStats = newPlayerStats.seasonTotalsRegularSeason
                                     .filter( season => season.seasonId === "2017-18" );
-
-      console.log(playerCurrentSeasonStats, newPlayerStats);
 
       const playerRating = this.getRating(playerCurrentSeasonStats);
 
@@ -82,7 +78,6 @@ class App extends Component {
         return addPlayerToState
 
     } else {
-      console.log('Please enter a listed player');
       return 'Please enter a listed player'
     }
 
@@ -275,19 +270,19 @@ class App extends Component {
     this.setState({ isLoading: false })
   }
 
-  getSpotlightPlayer() {
+  getSpotlightPlayer = () =>
     this.state.players.map( (player, index) => {
-      if ( player.name === this.state.spotlightPlayer ) {
+      if ( player.name === this.state.spotlightPlayer) {
         return player
       }
     })
-  }
-
 
   render() {
     const givePlayerScore = this.getGivePlayerScore();
     const getPlayerScore = this.getGetPlayerScore();
     const playerStatDiff = this.playerStatDiff();
+    const spotlightPlayer = this.getSpotlightPlayer();
+    console.log(spotlightPlayer);
 
     return (
       <div className="App">
