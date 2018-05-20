@@ -20,6 +20,8 @@ class App extends Component {
 
   async componentWillMount() {
     this.state.players.push(await this.getPlayerStats('Stephen Curry'));
+
+    this.getSpotlightPlayer();
   }
 
   async getPlayerStats (playerName) {
@@ -277,7 +279,7 @@ class App extends Component {
     this.state.players.map( (player, index) => {
       if ( player.name === this.state.spotlightPlayer ) {
         return player
-      } 
+      }
     })
   }
 
@@ -286,7 +288,6 @@ class App extends Component {
     const givePlayerScore = this.getGivePlayerScore();
     const getPlayerScore = this.getGetPlayerScore();
     const playerStatDiff = this.playerStatDiff();
-    console.log(this.getSpotlightPlayer());
 
     return (
       <div className="App">
