@@ -270,19 +270,18 @@ class App extends Component {
     this.setState({ isLoading: false })
   }
 
-  getSpotlightPlayer = () =>
+  getSpotlightPlayer = () => {
     this.state.players.map( (player, index) => {
-      if ( player.name === this.state.spotlightPlayer) {
+      if (player.name === this.state.spotlightPlayer ) {
         return player
       }
     })
+  }
 
   render() {
     const givePlayerScore = this.getGivePlayerScore();
     const getPlayerScore = this.getGetPlayerScore();
     const playerStatDiff = this.playerStatDiff();
-    const spotlightPlayer = this.getSpotlightPlayer();
-    console.log(spotlightPlayer);
 
     return (
       <div className="App">
