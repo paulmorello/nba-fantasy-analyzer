@@ -271,7 +271,7 @@ class App extends Component {
   }
 
   getSpotlightPlayer = () => {
-    this.state.players.map( (player, index) => {
+    this.state.players.filter( (player) => {
       if (player.name === this.state.spotlightPlayer ) {
         return player
       }
@@ -282,6 +282,7 @@ class App extends Component {
     const givePlayerScore = this.getGivePlayerScore();
     const getPlayerScore = this.getGetPlayerScore();
     const playerStatDiff = this.playerStatDiff();
+    console.log(this.getSpotlightPlayer());
 
     return (
       <div className="App">
