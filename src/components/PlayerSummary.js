@@ -26,7 +26,8 @@ class PlayerSummary extends Component {
           setNotLoadingState={ this.props.setNotLoadingState }
           addGivePlayer={ this.addGivePlayer }
           addGetPlayer={ this.addGetPlayer }
-          addPlayerToState={ this.addPlayerToState } />
+          addPlayerToState={ this.addPlayerToState }
+          getSpotlightPlayer={ this.getSpotlightPlayer } />
       </div>
     )
   }
@@ -40,7 +41,8 @@ class PlayerSummary extends Component {
     setNotLoadingState: PropTypes.func.isRequired,
     addGivePlayer: PropTypes.func,
     addGetPlayer: PropTypes.func,
-    addPlayerToState: PropTypes.func
+    addPlayerToState: PropTypes.func,
+    getSpotlightPlayer: PropTypes.func
   }
 
 

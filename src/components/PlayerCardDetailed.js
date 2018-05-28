@@ -14,6 +14,8 @@ class PlayerCardDetailed extends Component {
 
   render() {
       console.log(this.props.spotlightPlayer);
+      console.log(this.props.getSpotlightPlayer);
+
     return (
       <div className="player-card-detailed-container">
         <PlayerStatsCard />
@@ -30,7 +32,8 @@ class PlayerCardDetailed extends Component {
     setNotLoadingState: PropTypes.func.isRequired,
     addGivePlayer: PropTypes.func,
     addGetPlayer: PropTypes.func,
-    addPlayerToState: PropTypes.func
+    addPlayerToState: PropTypes.func,
+    getSpotlightPlayer: PropTypes.func
   }
 
 
