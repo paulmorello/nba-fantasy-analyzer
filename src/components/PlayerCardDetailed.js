@@ -10,10 +10,12 @@ class PlayerCardDetailed extends Component {
     super(props);
     this.state = {
     }
+
+    this.handleClick = this.handleClick.bind(this)
   }
 
   handleClick() {
-    console.log();
+    console.log(this.props.getSpotlightPlayer);
   }
 
   render() {
@@ -21,7 +23,7 @@ class PlayerCardDetailed extends Component {
 
     return (
       <div className="player-card-detailed-container"
-        onClick={ this.props.getSpotlightPlayer() }>
+        onClick={ this.handleClick }>
         <PlayerStatsCard />
       </div>
     )
