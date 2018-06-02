@@ -15,7 +15,11 @@ class PlayerCardDetailed extends Component {
   }
 
   handleClick() {
-    console.log(this.props.getSpotlightPlayer);
+    console.log(this.props.players.map( (player, index) => {
+      if (player.name === this.props.spotlightPlayer ) {
+        return player
+      }
+    }))
   }
 
   render() {
