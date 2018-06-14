@@ -9,7 +9,7 @@ class PlayerCardDetailed extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      newSpotlightPlayer: ''
+      newSpotlightPlayer: []
     }
 
     this.handleClick = this.handleClick.bind(this)
@@ -19,7 +19,6 @@ class PlayerCardDetailed extends Component {
     this.setState({
       newSpotlightPlayer: this.props.players.map( (player, index) => {
         if (player.name === this.props.spotlightPlayer ) {
-          console.log(player);
           return player
         }
       })
@@ -27,12 +26,13 @@ class PlayerCardDetailed extends Component {
   }
 
   render() {
-      console.log(this.state.newSpotlightPlayer);
+    console.log(this.state.newSpotlightPlayer);
 
     return (
       <div className="player-card-detailed-container"
         onClick={ this.handleClick }>
-        <PlayerStatsCard />
+        <PlayerStatsCard
+          name={ (this.state.newSpotlightPlayer) ? [] : this.state.newSpotlightPlayer[0].name}/>
       </div>
     )
   }
