@@ -9,21 +9,25 @@ class PlayerCardDetailed extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      newSpotlightPlayer: ''
     }
 
     this.handleClick = this.handleClick.bind(this)
   }
 
   handleClick() {
-    console.log(this.props.players.map( (player, index) => {
-      if (player.name === this.props.spotlightPlayer ) {
-        return player
-      }
-    }))
+    this.setState({
+      newSpotlightPlayer: this.props.players.map( (player, index) => {
+        if (player.name === this.props.spotlightPlayer ) {
+          console.log(player);
+          return player
+        }
+      })
+    })
   }
 
   render() {
-      console.log(this.props.spotlightPlayer);
+      console.log(this.state.newSpotlightPlayer);
 
     return (
       <div className="player-card-detailed-container"
