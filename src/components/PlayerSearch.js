@@ -21,8 +21,8 @@ class PlayerSearch extends Component {
 
   handleClick() {
 
-    this.props.changeSpotlightPlayer(this.state.playerName);
-
+    // still need to think of how to do the spotlight player thing
+    this.props.changeSpotlightPlayer(this.state.playerName)
   }
 
   render() {
@@ -43,8 +43,9 @@ class PlayerSearch extends Component {
 
   PlayerSearch.propTypes = {
     players: PropTypes.array.isRequired,
-    spotlightPlayer: PropTypes.string.isRequired,
-    changeSpotlightPlayer: PropTypes.func
+    spotlightPlayer: PropTypes.array.isRequired,
+    changeSpotlightPlayer: PropTypes.func,
+    addPlayerToState: PropTypes.func
   }
 
 

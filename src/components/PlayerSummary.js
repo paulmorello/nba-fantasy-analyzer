@@ -13,7 +13,8 @@ class PlayerSummary extends Component {
         <PlayerSearch
           players={ this.props.players }
           spotlightPlayer={ this.props.spotlightPlayer }
-          changeSpotlightPlayer={ this.props.changeSpotlightPlayer } />
+          changeSpotlightPlayer={ this.props.changeSpotlightPlayer }
+          addPlayerToState={ this.props.addPlayerToState } />
         <PlayerCardDetailed
           players={ this.props.players }
           spotlightPlayer={ this.props.spotlightPlayer } />
@@ -24,8 +25,9 @@ class PlayerSummary extends Component {
 
   PlayerSummary.propTypes = {
     players: PropTypes.array.isRequired,
-    spotlightPlayer: PropTypes.string.isRequired,
-    changeSpotlightPlayer: PropTypes.func
+    spotlightPlayer: PropTypes.array.isRequired,
+    changeSpotlightPlayer: PropTypes.func,
+    addPlayerToState: PropTypes.func
   }
 
 

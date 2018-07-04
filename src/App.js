@@ -12,7 +12,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      spotlightPlayer: 'Stephen Curry',
+      spotlightPlayer: [],
       isLoading: false,
       players: []
     }
@@ -271,9 +271,7 @@ class App extends Component {
   }
 
   newSpotlightPlayer = (newSpotlightPlayer) => {
-    this.setState({
-      spotlightPlayer: newSpotlightPlayer
-    })
+    // need to figure out the spotlight player thing
   }
 
   render() {
@@ -288,7 +286,8 @@ class App extends Component {
           players={ this.state.players }
           isLoading={ this.state.isLoading }
           spotlightPlayer={ this.state.spotlightPlayer }
-          changeSpotlightPlayer={ this.newSpotlightPlayer } />
+          changeSpotlightPlayer={ this.newSpotlightPlayer }
+          addPlayerToState={ this.addPlayer } />
         <TeamSelection
           players={ this.state.players }
           isLoading={ this.state.isLoading }
