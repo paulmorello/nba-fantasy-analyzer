@@ -12,22 +12,11 @@ class PlayerSummary extends Component {
       <div className="player-summary-container">
         <PlayerSearch
           players={ this.props.players }
-          isLoading={ this.props.isLoading }
-          setLoadingState={ this.props.setLoadingState }
-          setNotLoadingState={ this.props.setNotLoadingState }
-          addGivePlayer={ this.addGivePlayer }
-          addGetPlayer={ this.addGetPlayer }
-          addPlayerToState={ this.addPlayerToState } />
+          spotlightPlayer={ this.props.spotlightPlayer }
+          changeSpotlightPlayer={ this.props.changeSpotlightPlayer } />
         <PlayerCardDetailed
           players={ this.props.players }
-          spotlightPlayer={ this.props.spotlightPlayer }
-          isLoading={ this.props.isLoading }
-          setLoadingState={ this.props.setLoadingState }
-          setNotLoadingState={ this.props.setNotLoadingState }
-          addGivePlayer={ this.addGivePlayer }
-          addGetPlayer={ this.addGetPlayer }
-          addPlayerToState={ this.addPlayerToState }
-          getSpotlightPlayer={ this.getSpotlightPlayer } />
+          spotlightPlayer={ this.props.spotlightPlayer } />
       </div>
     )
   }
@@ -36,13 +25,7 @@ class PlayerSummary extends Component {
   PlayerSummary.propTypes = {
     players: PropTypes.array.isRequired,
     spotlightPlayer: PropTypes.string.isRequired,
-    isLoading: PropTypes.bool.isRequired,
-    setLoadingState: PropTypes.func.isRequired,
-    setNotLoadingState: PropTypes.func.isRequired,
-    addGivePlayer: PropTypes.func,
-    addGetPlayer: PropTypes.func,
-    addPlayerToState: PropTypes.func,
-    getSpotlightPlayer: PropTypes.func
+    changeSpotlightPlayer: PropTypes.func
   }
 
 

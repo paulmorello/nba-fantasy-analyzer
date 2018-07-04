@@ -270,13 +270,10 @@ class App extends Component {
     this.setState({ isLoading: false })
   }
 
-  getSpotlightPlayer = () => {
-    this.state.players.map( (player, index) => {
-      if (player.name === this.state.spotlightPlayer ) {
-        return player
-      }
+  newSpotlightPlayer = (newSpotlightPlayer) => {
+    this.setState({
+      spotlightPlayer: newSpotlightPlayer
     })
-    return 'Choose a player'
   }
 
   render() {
@@ -291,12 +288,7 @@ class App extends Component {
           players={ this.state.players }
           isLoading={ this.state.isLoading }
           spotlightPlayer={ this.state.spotlightPlayer }
-          setLoadingState={ this.setLoadingState }
-          setNotLoadingState={ this.setNotLoadingState }
-          addGivePlayer={ this.addGivePlayer }
-          addGetPlayer={ this.addGetPlayer }
-          addPlayerToState={ this.addPlayerToState }
-          getSpotlightPlayer={ this.getSpotlightPlayer }/>
+          changeSpotlightPlayer={ this.newSpotlightPlayer } />
         <TeamSelection
           players={ this.state.players }
           isLoading={ this.state.isLoading }

@@ -20,13 +20,9 @@ class PlayerSearch extends Component {
   }
 
   handleClick() {
-    console.log(this.props.players.map( (player, index) => {
-      if (player.name === this.state.playerName) {
-        return player
-      } else {
-        return 'player not in state'
-      }
-    }))
+
+    this.props.changeSpotlightPlayer(this.state.playerName);
+
   }
 
   render() {
@@ -47,12 +43,8 @@ class PlayerSearch extends Component {
 
   PlayerSearch.propTypes = {
     players: PropTypes.array.isRequired,
-    isLoading: PropTypes.bool.isRequired,
-    setLoadingState: PropTypes.func.isRequired,
-    setNotLoadingState: PropTypes.func.isRequired,
-    addGivePlayer: PropTypes.func,
-    addGetPlayer: PropTypes.func,
-    addPlayerToState: PropTypes.func
+    spotlightPlayer: PropTypes.string.isRequired,
+    changeSpotlightPlayer: PropTypes.func
   }
 
 
