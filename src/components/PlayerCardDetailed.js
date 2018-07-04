@@ -26,7 +26,6 @@ class PlayerCardDetailed extends Component {
   }
 
   render() {
-    console.log(this.state.newSpotlightPlayer);
 
     return (
       <div className="player-card-detailed-container"
