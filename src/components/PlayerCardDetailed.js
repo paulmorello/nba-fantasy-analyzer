@@ -9,13 +9,13 @@ class PlayerCardDetailed extends Component {
   render() {
     const spotlightPlayer = this.props.spotlightPlayer
 
-    console.log(this.props.spotlightPlayer);
+    console.log(spotlightPlayer);
 
     return (
       <div className="player-card-detailed-container"
         onClick={ this.handleClick }>
         <PlayerStatsCard
-          name={ 'Stephen Curry' }/>
+          name={ spotlightPlayer[0] }/>
       </div>
     )
   }
