@@ -15,13 +15,10 @@ class PlayerCardDetailed extends Component {
   }
 
   componentWillMount() {
-    console.log(this.state.playerName);
+
   }
 
   componentDidMount() {
-    this.setState({
-      playerName: this.props.spotlightPlayer[0]['name']
-    })
   }
 
   render() {
