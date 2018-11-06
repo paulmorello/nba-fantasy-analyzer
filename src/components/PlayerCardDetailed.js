@@ -7,15 +7,9 @@ import PlayerStatsCard from './PlayerStatsCard';
 class PlayerCardDetailed extends Component {
 
   render() {
-    const spotlightPlayer = this.props.spotlightPlayer
-
-    console.log(spotlightPlayer);
-
     return (
-      <div className="player-card-detailed-container"
-        onClick={ this.handleClick }>
-        <PlayerStatsCard
-          name={ spotlightPlayer[0] }/>
+      <div className="player-card-detailed-container">
+
       </div>
     )
   }

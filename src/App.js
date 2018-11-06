@@ -12,7 +12,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      spotlightPlayer: [ "Stephen Curry" ],
+      spotlightPlayer: [],
       isLoading: false,
       players: []
     }
@@ -20,6 +20,7 @@ class App extends Component {
 
   async componentWillMount() {
     this.state.players.push(await this.getPlayerStats('Stephen Curry'));
+    this.state.spotlightPlayer.push(await this.getPlayerStats('Stephen Curry'));
   }
 
   async getPlayerStats (playerName) {
