@@ -14,10 +14,15 @@ class PlayerSummary extends Component {
           players={ this.props.players }
           spotlightPlayer={ this.props.spotlightPlayer }
           changeSpotlightPlayer={ this.props.changeSpotlightPlayer }
-          addPlayerToState={ this.props.addPlayerToState } />
+          addPlayerToState={ this.props.addPlayerToState }
+          setLoadingState={ this.props.setLoadingState }
+          setNotLoadingState={ this.props.setNotLoadingState }
+          newSpotlightPlayer={ this.props.newSpotlightPlayer }/>
         <PlayerCardDetailed
           players={ this.props.players }
-          spotlightPlayer={ this.props.spotlightPlayer } />
+          spotlightPlayer={ this.props.spotlightPlayer }
+          setLoadingState={ this.props.setLoadingState }
+          setNotLoadingState={ this.props.setNotLoadingState } />
       </div>
     )
   }
@@ -27,7 +32,10 @@ class PlayerSummary extends Component {
     players: PropTypes.array.isRequired,
     spotlightPlayer: PropTypes.array.isRequired,
     changeSpotlightPlayer: PropTypes.func,
-    addPlayerToState: PropTypes.func
+    addPlayerToState: PropTypes.func,
+    setLoadingState: PropTypes.func.isRequired,
+    setNotLoadingState: PropTypes.func.isRequired,
+    newSpotlightPlayer: PropTypes.func.isRequired
   }
 
 

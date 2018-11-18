@@ -26,35 +26,42 @@ class GetPlayerInput extends Component {
     let playerName = this.state.playerName;
     let playerInState = false;
 
-    // mapping over players in state and adding player if necessary
-    this.props.players.map( (player, index) => {
+    if (playerName) {
 
-      // player is already in state
-      if (player.name === playerName) {
-        playerInState = true;
-        console.log('player is already in state');
-        // change the loading state back to not loading
-        this.props.setNotLoadingState();
+      // mapping over players in state and adding player if necessary
+      this.props.players.map( (player, index) => {
 
-        // check if player is already listed in the get team
-        if (!player.toGet) {
-          this.props.addGetPlayer(playerName);
-        } else {
-          console.log('player is already in the get team');
+        // player is already in state
+        if (player.name === playerName) {
+          playerInState = true;
+          console.log('player is already in state');
+          // change the loading state back to not loading
+          this.props.setNotLoadingState();
+
+          // check if player is already listed in the get team
+          if (!player.toGet) {
+            this.props.addGetPlayer(playerName);
+          } else {
+            console.log('player is already in the get team');
+          }
         }
+        return player
+      })
+
+      // if not already in state, app will retrieve stats and add player to state
+      if (!playerInState) {
+        this.props.addPlayerToState(playerName)
+
+        // needs time to first retrieve the stats and add to state before adding
+        // player to the get team
+        setTimeout( () => {
+          this.props.addGetPlayer(playerName)
+        }, 5000)
       }
-      return player
-    })
-
-    // if not already in state, app will retrieve stats and add player to state
-    if (!playerInState) {
-      this.props.addPlayerToState(playerName)
-
-      // needs time to first retrieve the stats and add to state before adding
-      // player to the get team
-      setTimeout( () => {
-        this.props.addGetPlayer(playerName)
-      }, 5000)
+    } else {
+      // change the loading state back to not loading
+      this.props.setNotLoadingState();
+      console.log("Please select a Player Name");
     }
   }
 

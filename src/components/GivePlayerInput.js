@@ -26,34 +26,41 @@ class GivePlayerInput extends Component {
     let playerName = this.state.playerName;
     let playerInState = false;
 
-    // mapping over players in state and adding player if necessary
-    this.props.players.map( (player, index) => {
+    if (playerName) {
 
-      // player is already in state
-      if (player.name === playerName) {
-        playerInState = true;
-        // change the loading state back to not loading
-        this.props.setNotLoadingState();
+      // mapping over players in state and adding player if necessary
+      this.props.players.map( (player, index) => {
 
-        // check if player is already listed in the give team
-        if (!player.toGive) {
-          this.props.addGivePlayer(playerName);
-        } else {
-          console.log('player is already in the give team');
+        // player is already in state
+        if (player.name === playerName) {
+          playerInState = true;
+          // change the loading state back to not loading
+          this.props.setNotLoadingState();
+
+          // check if player is already listed in the give team
+          if (!player.toGive) {
+            this.props.addGivePlayer(playerName);
+          } else {
+            console.log('player is already in the give team');
+          }
         }
+        return player
+      })
+
+      // if not already in state, app will retrieve stats and add player to state
+      if (!playerInState) {
+        this.props.addPlayerToState(playerName)
+
+        // needs time to first retrieve the stats and add to state before adding
+        // player to the give team
+        setTimeout( () => {
+          this.props.addGivePlayer(playerName)
+        }, 5000)
       }
-      return player
-    })
-
-    // if not already in state, app will retrieve stats and add player to state
-    if (!playerInState) {
-      this.props.addPlayerToState(playerName)
-
-      // needs time to first retrieve the stats and add to state before adding
-      // player to the give team
-      setTimeout( () => {
-        this.props.addGivePlayer(playerName)
-      }, 5000)
+    } else {
+      // change the loading state back to not loading
+      this.props.setNotLoadingState();
+      console.log("Please select a Player Name");
     }
   }
 

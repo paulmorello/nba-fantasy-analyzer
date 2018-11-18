@@ -21,8 +21,10 @@ class App extends Component {
   async componentWillMount() {
     this.state.players.push(await this.getPlayerStats('Stephen Curry'));
     this.state.spotlightPlayer.push(await this.getPlayerStats('Stephen Curry'));
+
   }
 
+  // Adding the player stats to state for trade comparison
   async getPlayerStats (playerName) {
 
     const player = NBA.findPlayer(playerName);
@@ -41,7 +43,7 @@ class App extends Component {
                                   })
 
       const playerCurrentSeasonStats = newPlayerStats.seasonTotalsRegularSeason
-                                    .filter( season => season.seasonId === "2017-18" );
+                                    .filter( season => season.seasonId === "2018-19" );
 
       const playerRating = this.getRating(playerCurrentSeasonStats);
 
@@ -73,7 +75,8 @@ class App extends Component {
         age: playerCurrentSeasonStats[0].playerAge,
         rating: playerRating,
         toGive: false,
-        toGet: false
+        toGet: false,
+        isSpotlight: false
       }
 
         return addPlayerToState
@@ -82,6 +85,20 @@ class App extends Component {
       return 'Please enter a listed player'
     }
 
+  }
+
+  // stats added to state for the detailed breakdown
+  newSpotlightPlayer = (newSpotlightPlayer) => {
+
+    let player = this.getPlayerStats(newSpotlightPlayer);
+    let that = this;
+
+    setTimeout( () => {
+      player = player.then( data => {
+        that.state.spotlightPlayer.push(data);
+        that.setState(that.state);
+      });
+    }, 1000);
 
   }
 
@@ -271,10 +288,6 @@ class App extends Component {
     this.setState({ isLoading: false })
   }
 
-  newSpotlightPlayer = (newSpotlightPlayer) => {
-    // need to figure out the spotlight player thing
-  }
-
   render() {
     const givePlayerScore = this.getGivePlayerScore();
     const getPlayerScore = this.getGetPlayerScore();
@@ -288,7 +301,10 @@ class App extends Component {
           isLoading={ this.state.isLoading }
           spotlightPlayer={ this.state.spotlightPlayer }
           changeSpotlightPlayer={ this.newSpotlightPlayer }
-          addPlayerToState={ this.addPlayer } />
+          addPlayerToState={ this.addPlayer }
+          setLoadingState={ this.setLoadingState }
+          setNotLoadingState={ this.setNotLoadingState }
+          newSpotlightPlayer={this.newSpotlightPlayer} />
         <TeamSelection
           players={ this.state.players }
           isLoading={ this.state.isLoading }

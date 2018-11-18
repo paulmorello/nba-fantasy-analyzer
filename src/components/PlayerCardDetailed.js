@@ -25,7 +25,7 @@ class PlayerCardDetailed extends Component {
 
     return (
       <div className="player-card-detailed-container">
-      
+
       </div>
     )
   }
@@ -34,6 +34,8 @@ class PlayerCardDetailed extends Component {
   PlayerCardDetailed.propTypes = {
     players: PropTypes.array.isRequired,
     spotlightPlayer: PropTypes.array.isRequired,
+    setLoadingState: PropTypes.func.isRequired,
+    setNotLoadingState: PropTypes.func.isRequired
   }
 
 
