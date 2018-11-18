@@ -25,7 +25,7 @@ class PlayerCardDetailed extends Component {
 
     return (
       <div className="player-card-detailed-container">
-        {this.props.spotlightPlayer}
+      
       </div>
     )
   }
