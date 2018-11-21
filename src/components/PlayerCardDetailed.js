@@ -33,7 +33,7 @@ class PlayerCardDetailed extends Component {
 
   PlayerCardDetailed.propTypes = {
     players: PropTypes.array.isRequired,
-    spotlightPlayer: PropTypes.array.isRequired,
+    addSpotlightPlayer: PropTypes.func.isRequired,
     setLoadingState: PropTypes.func.isRequired,
     setNotLoadingState: PropTypes.func.isRequired
   }

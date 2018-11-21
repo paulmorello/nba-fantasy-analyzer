@@ -88,18 +88,24 @@ class App extends Component {
   }
 
   // stats added to state for the detailed breakdown
-  newSpotlightPlayer = (newSpotlightPlayer) => {
+  addSpotlightPlayer = (newSpotlightPlayer) => {
 
-    let player = this.getPlayerStats(newSpotlightPlayer);
-    let that = this;
+    this.setState({
+      players: this.state.players.map( (player, index) => {
+        if (player.name === newSpotlightPlayer) {
+          if (!player.isSpotlight) {
+            return {
+              ...player,
+              isSpotlight: true
+            }
+          } else {
+            return player
+          }
+        }
+        return player
+      })
 
-    setTimeout( () => {
-      player = player.then( data => {
-        that.state.spotlightPlayer.push(data);
-        that.setState(that.state);
-      });
-    }, 1000);
-
+    })
   }
 
   addPlayer = (playerName) => {
@@ -304,7 +310,7 @@ class App extends Component {
           addPlayerToState={ this.addPlayer }
           setLoadingState={ this.setLoadingState }
           setNotLoadingState={ this.setNotLoadingState }
-          newSpotlightPlayer={this.newSpotlightPlayer} />
+          addSpotlightPlayer={this.addSpotlightPlayer} />
         <TeamSelection
           players={ this.state.players }
           isLoading={ this.state.isLoading }

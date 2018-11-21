@@ -25,38 +25,38 @@ class PlayerSearch extends Component {
     this.props.setLoadingState();
 
     let playerName = this.state.playerName;
-    let playerInSpotlightState = false;
+    let playerInState = false;
 
     if (playerName) {
 
       // mapping over players in state and adding player if necessary
-      this.props.spotlightPlayer.map( (player, index) => {
+      this.props.players.map( (player, index) => {
 
         // player is already in state
         if (player.name === playerName) {
-          playerInSpotlightState = true;
+          playerInState = true;
           console.log('player is already in state');
           // change the loading state back to not loading
           this.props.setNotLoadingState();
 
           // check if player is already listed as the spotlight player
           if (!player.isSpotlight) {
-            this.props.addGetPlayer(playerName);
+            this.props.addSpotlightPlayer(playerName);
           } else {
-            console.log('player is already in the get team');
+            console.log('player is already the spotlight player');
           }
         }
         return player
       })
 
       // if not already in state, app will retrieve stats and add player to state
-      if (!playerInSpotlightState) {
+      if (!playerInState) {
         this.props.addPlayerToState(playerName)
 
         // needs time to first retrieve the stats and add to state before adding
         // player to the get team
         setTimeout( () => {
-          this.props.newSpotlightPlayer(playerName)
+          this.props.addSpotlightPlayer(playerName)
         }, 5000)
       }
     } else {
@@ -88,7 +88,7 @@ class PlayerSearch extends Component {
     addPlayerToState: PropTypes.func,
     setLoadingState: PropTypes.func.isRequired,
     setNotLoadingState: PropTypes.func.isRequired,
-    newSpotlightPlayer: PropTypes.func.isRequired
+    addSpotlightPlayer: PropTypes.func.isRequired
   }
 
 
