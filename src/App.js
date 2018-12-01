@@ -108,6 +108,10 @@ class App extends Component {
     })
   }
 
+  currentSpotlightPlayer = () =>
+    this.state.players.filter( player => player.isSpotlight )
+
+
   addPlayer = (playerName) => {
 
     let player = this.getPlayerStats(playerName);
@@ -306,7 +310,7 @@ class App extends Component {
           players={ this.state.players }
           isLoading={ this.state.isLoading }
           spotlightPlayer={ this.state.spotlightPlayer }
-          changeSpotlightPlayer={ this.newSpotlightPlayer }
+          currentSpotlightPlayer={ this.currentSpotlightPlayer }
           addPlayerToState={ this.addPlayer }
           setLoadingState={ this.setLoadingState }
           setNotLoadingState={ this.setNotLoadingState }

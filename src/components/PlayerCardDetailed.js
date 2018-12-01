@@ -6,19 +6,23 @@ import PlayerStatsCard from './PlayerStatsCard';
 
 class PlayerCardDetailed extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      playerName: '',
-
+      spotlightPlayer: [],
     }
   }
 
-  componentWillMount() {
-
-  }
-
   componentDidMount() {
+    let that = this;
+
+    setTimeout( () => {
+      that.setState({
+        spotlightPlayer: that.props.currentSpotlightPlayer()
+      })
+    }, 3000)
+
+    console.log(this.state.spotlightPlayer);
   }
 
   render() {
@@ -35,7 +39,8 @@ class PlayerCardDetailed extends Component {
     players: PropTypes.array.isRequired,
     addSpotlightPlayer: PropTypes.func.isRequired,
     setLoadingState: PropTypes.func.isRequired,
-    setNotLoadingState: PropTypes.func.isRequired
+    setNotLoadingState: PropTypes.func.isRequired,
+    currentSpotlightPlayer: PropTypes.func
   }
 
 

@@ -13,7 +13,7 @@ class PlayerSummary extends Component {
         <PlayerSearch
           players={ this.props.players }
           spotlightPlayer={ this.props.spotlightPlayer }
-          changeSpotlightPlayer={ this.props.changeSpotlightPlayer }
+          currentSpotlightPlayer={ this.props.currentSpotlightPlayer }
           addPlayerToState={ this.props.addPlayerToState }
           setLoadingState={ this.props.setLoadingState }
           setNotLoadingState={ this.props.setNotLoadingState }
@@ -22,7 +22,9 @@ class PlayerSummary extends Component {
           players={ this.props.players }
           spotlightPlayer={ this.props.spotlightPlayer }
           setLoadingState={ this.props.setLoadingState }
-          setNotLoadingState={ this.props.setNotLoadingState } />
+          setNotLoadingState={ this.props.setNotLoadingState }
+          addSpotlightPlayer={ this.props.addSpotlightPlayer }
+          currentSpotlightPlayer={ this.props.currentSpotlightPlayer } />
       </div>
     )
   }
@@ -31,7 +33,7 @@ class PlayerSummary extends Component {
   PlayerSummary.propTypes = {
     players: PropTypes.array.isRequired,
     spotlightPlayer: PropTypes.array.isRequired,
-    changeSpotlightPlayer: PropTypes.func,
+    currentSpotlightPlayer: PropTypes.func,
     addPlayerToState: PropTypes.func,
     setLoadingState: PropTypes.func.isRequired,
     setNotLoadingState: PropTypes.func.isRequired,
