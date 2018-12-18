@@ -21,7 +21,6 @@ class App extends Component {
   async componentWillMount() {
     this.state.players.push(await this.getPlayerStats('Stephen Curry'));
     this.state.spotlightPlayer.push(await this.getPlayerStats('Stephen Curry'));
-
   }
 
   // Adding the player stats to state for trade comparison
@@ -41,11 +40,13 @@ class App extends Component {
                                   .then( data => {
                                     return data;
                                   })
-
+      const seasonNumber = playerStats.playerHeadlineStats[0].timeFrame
       const playerCurrentSeasonStats = newPlayerStats.seasonTotalsRegularSeason
-                                    .filter( season => season.seasonId === "2018-19" );
+                                    .filter( season => season.seasonId === seasonNumber );
 
       const playerRating = this.getRating(playerCurrentSeasonStats);
+
+      console.log(playerStats);
 
       const addPlayerToState = {
         name: playerStats.playerHeadlineStats[0].playerName,
