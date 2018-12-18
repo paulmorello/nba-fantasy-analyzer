@@ -26,10 +26,18 @@ class PlayerCardDetailed extends Component {
   }
 
   render() {
+    console.log(this.props.players);
 
     return (
       <div className="player-card-detailed-container">
-
+        { this.props.players
+          .filter( player => player.isSpotlight )
+          .map( (player, index) =>
+          <PlayerStatsCard
+            key={index}
+            name={player.name}
+          />
+        )}
       </div>
     )
   }
