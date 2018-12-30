@@ -245,3 +245,13 @@ ul li {
 .visible {
   visibility: visible;
 }
+
+/* Player Detailed cards */
+
+.player-stats-card {
+
+}
+
+.player-profile-header {
+  color: white;
+}

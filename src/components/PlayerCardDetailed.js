@@ -36,6 +36,8 @@ class PlayerCardDetailed extends Component {
           <PlayerStatsCard
             key={index}
             name={player.name}
+            age={player.age}
+            team={player.team}
           />
         )}
       </div>

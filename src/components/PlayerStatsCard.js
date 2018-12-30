@@ -10,7 +10,10 @@ class PlayerStatsCard extends Component {
         </div>
         <div className="player-profile-info">
           <div className="player-profile-header">
-            { this.props.name }
+            { this.props.name }, { this.props.age }, { this.props.team }
+          </div>
+          <div className="player-profile-stats">
+
           </div>
         </div>
       </div>
@@ -19,7 +22,9 @@ class PlayerStatsCard extends Component {
 }
 
   PlayerStatsCard.propTypes = {
-    name: PropTypes.string
+    name: PropTypes.string,
+    age: PropTypes.number,
+    team: PropTypes.string
   }
 
 
